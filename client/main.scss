@@ -1,3 +1,5 @@
+// first overlay styling
+
 .welcome-overlay {
   position: fixed;
   top: 0;
@@ -43,7 +45,7 @@
   }
   
   h1 {
-    font-size: 2.5rem;
+    font-size: 1.35rem;
     margin-bottom: 1rem;
     font-weight: 900;
     color: #2c3e50;
@@ -162,3 +164,210 @@
     }
   }
 }
+
+// Player Overlay Styles
+.player-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1001;
+  animation: fadeIn 0.3s ease-in;
+  cursor: pointer;
+  
+  // Blur everything
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    // Cut out a hole for the spotlight
+    -webkit-mask-image: radial-gradient(
+      circle 75px at 110px 530px,
+      transparent 0%,
+      transparent 100%,
+      black 100%
+    );
+    mask-image: radial-gradient(
+      circle 75px at 110px 530px,
+      transparent 0%,
+      transparent 100%,
+      black 100%
+    );
+  }
+  
+  // Dark overlay with spotlight cutout
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle 75px at 110px 530px,
+      transparent 0%,
+      transparent 75px,
+      rgba(0, 0, 0, 0.7) 75px
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  // Spotlight glow around player
+  .spotlight {
+    position: absolute;
+    left: 110px;
+    top: 530px;
+    width: 150px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    box-shadow: 
+      0 0 40px 10px rgba(255, 255, 0, 0.3),
+      0 0 60px 20px rgba(255, 255, 0, 0.2);
+    z-index: 3;
+    pointer-events: none;
+    animation: pulse 2s ease-in-out infinite;
+  }
+}
+
+.player-speech-bubble {
+  position: absolute;
+  left: 210px; // Position to the right of player
+  top: 423px; // Slightly above player
+  background: linear-gradient(180deg, #87CEEB 0%, #98D8E8 100%);
+  border: 5px solid #5D4E37;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 350px;
+  box-shadow: 
+    0 0 0 3px #A0522D,
+    0 6px 0 #654321,
+    0 6px 15px rgba(0, 0, 0, 0.4);
+  z-index: 3;
+  animation: bounceIn 0.5s ease-out;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  
+  // Arrow pointing to player
+  &::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid #8B4513;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 15px solid #FFE5B4;
+  }
+  
+  p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    color: #2c3e50;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+    
+    &:last-of-type {
+      margin-bottom: 0;
+      font-size: 0.75rem;
+      color: #666;
+      font-style: italic;
+    }
+  }
+}
+
+
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 40px 10px rgba(255, 255, 0, 0.3),
+      0 0 60px 20px rgba(255, 255, 0, 0.2);
+  }
+  50% {
+    box-shadow: 
+      0 0 50px 15px rgba(255, 255, 0, 0.4),
+      0 0 70px 25px rgba(255, 255, 0, 0.3);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateX(-20px);
+  }
+  50% {
+    transform: scale(1.05) translateX(0);
+  }
+  70% {
+    transform: scale(0.95) translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-modal {
+    padding: 2rem 1.5rem;
+    
+    h1 {
+      font-size: 1.5rem;
+    }
+    
+    h2 {
+      font-size: 0.8rem;
+    }
+    
+    p {
+      font-size: 0.75rem;
+    }
+    
+    button {
+      font-size: 0.9rem;
+      padding: 0.8rem 2rem;
+    }
+  }
+  
+  .player-speech-bubble {
+    left: 50%;
+    top: 100px;
+    transform: translateX(-50%);
+    max-width: 85%;
+    
+    &::before,
+    &::after {
+      left: 50%;
+      top: auto;
+      bottom: -20px;
+      transform: translateX(-50%) rotate(90deg);
+    }
+  }
+}
+
