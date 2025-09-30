@@ -1,32 +1,3 @@
-// import { useEffect } from 'react'
-
-// interface WelcomeOverlayProps {
-//   onClose: () => void
-// }
-
-// function WelcomeOverlay({ onClose }: WelcomeOverlayProps) {
-//   useEffect(() => {
-//     localStorage.setItem('hasVisited', 'true')
-//   }, [])
-//   const handleContinue = () => {
-//     onClose()
-//   }
-
-//   return (
-//     <div>
-//       <h1>Welcome to my Portfolio Hub!!</h1>
-//       <h2>Control the character with you arrows on your keyboard!!</h2>
-//       <p>
-//         Go into the buildings with labels with them to be redirected to the
-//         progects in another window!!
-//       </p>
-//       <button onClick={handleContinue}>Continue</button>
-//     </div>
-//   )
-// }
-
-// export default WelcomeOverlay
-
 import { useEffect } from 'react'
 
 interface WelcomeOverlayProps {
