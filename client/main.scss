@@ -1,0 +1,164 @@
+.welcome-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(50, 50, 50, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.welcome-modal {
+  background: linear-gradient(180deg, #87CEEB 0%, #98D8E8 100%);
+  border: 6px solid #5D4E37;
+  border-radius: 4px;
+  padding: 3rem;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 
+    0 0 0 3px #8B7355,
+    0 8px 0 #3d3d3d,
+    0 8px 20px rgba(0, 0, 0, 0.4);
+  animation: slideUp 0.4s ease-out;
+  text-align: center;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    color: #2c3e50;
+    text-shadow: 
+      3px 3px 0 #fff,
+      4px 4px 0 rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    line-height: 1.4;
+  }
+  
+  h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: #34495e;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    line-height: 1.6;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+  }
+  
+  button {
+    background: linear-gradient(180deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    border: 4px solid #2d6b2f;
+    border-radius: 4px;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-shadow: 
+      0 6px 0 #2d6b2f,
+      0 8px 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    
+    &:hover {
+      background: linear-gradient(180deg, #5cb860 0%, #4CAF50 100%);
+      transform: translateY(-2px);
+      box-shadow: 
+        0 8px 0 #2d6b2f,
+        0 10px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    &:active {
+      transform: translateY(4px);
+      box-shadow: 
+        0 2px 0 #2d6b2f,
+        0 4px 5px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+// Add pixel decorations
+.welcome-modal::after {
+  content: '🌳 🏢 🌳';
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.3));
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-modal {
+    padding: 2rem 1.5rem;
+    
+    h1 {
+      font-size: 1.5rem;
+    }
+    
+    h2 {
+      font-size: 0.8rem;
+    }
+    
+    p {
+      font-size: 0.75rem;
+    }
+    
+    button {
+      font-size: 0.9rem;
+      padding: 0.8rem 2rem;
+    }
+  }
+}
