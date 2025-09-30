@@ -1,9 +1,11 @@
 import GameMap from './GameMap'
 import WelcomeOverlay from './WelcomeOverlay.tsx'
+import PlayerOverlay from './PlayerOverlay.tsx'
 import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router'
 function App() {
-  const [showOverlay, setShowOverlay] = useState(false)
+  //   const [showOverlay, setShowOverlay] = useState(false)
+  const [overlayStep, setOverlayStep] = useState<0 | 1 | 2>(0)
   const location = useLocation()
   const isHomePage = location.pathname === '/'
 
@@ -11,19 +13,24 @@ function App() {
     if (isHomePage) {
       const hasVisited = localStorage.getItem('hasVisited')
       if (!hasVisited) {
-        setShowOverlay(true)
+        setOverlayStep(1)
       }
     }
   }, [isHomePage])
 
-  const handleOverlayClose = () => {
-    setShowOverlay(false)
-    localStorage.setItem('hasVisited', 'true')
+  const handleWelcomeClose = () => {
+    setOverlayStep(2)
   }
 
+  const handlePlayerClose = () => {
+    setOverlayStep(0)
+    localStorage.setItem('hasVisited', 'true')
+  }
   return (
     <>
-      {showOverlay && <WelcomeOverlay onClose={handleOverlayClose} />}
+      {overlayStep === 1 && <WelcomeOverlay onClose={handleWelcomeClose} />}
+      {overlayStep === 2 && <PlayerOverlay onClose={handlePlayerClose} />}
+      {}
       <div
         style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}
       >
