@@ -44,7 +44,9 @@ const sprites = {
 
 // Define step and sprite sizes:
 const GRID_SIZE = 22.5
-const spriteWidthNum: number = 90 // for clamping math
+// const GRID_SIZE = 40
+
+const spriteWidthNum: number = 75 // for clamping math
 const spriteWidthCss: string = `${spriteWidthNum}px` // for CSS
 
 interface Sprite {
