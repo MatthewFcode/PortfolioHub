@@ -15,10 +15,7 @@ function App() {
 
   useEffect(() => {
     if (isHomePage) {
-      const hasVisited = localStorage.getItem('hasVisited')
-      if (!hasVisited) {
-        setOverlayStep(1)
-      }
+      setOverlayStep(1)
     }
   }, [isHomePage])
 
@@ -28,7 +25,6 @@ function App() {
 
   const handlePlayerClose = () => {
     setOverlayStep(0)
-    localStorage.setItem('hasVisited', 'true')
   }
   return (
     <>
