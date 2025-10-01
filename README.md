@@ -1,25 +1,14 @@
-# React Boilerplate
+# Personal Portfolio
 
-## Packages Included
+Hey, I am **Matthew** — welcome to my repository for my personal portfolio!  
 
-- react
-- react-router-dom
-- express
-- vite
-- vitest
-- eslint
-
-## Setup
-
-- [ ] Clone this repo, navigate to it, install packages, and start the server with `npm run dev`
-  <details style="padding-left: 2em">
-    <summary>Tip</summary>
-
-    ```sh
-    npm install
-    npm run dev
-    ```
-  </details>
+🌐 You can visit it live here: YOUR_LINK_HERE
 
 ---
-[Provide feedback on this repo](https://docs.google.com/forms/d/e/1FAIpQLSfw4FGdWkLwMLlUaNQ8FtP2CTJdGDUv6Xoxrh19zIrJSkvT4Q/viewform?usp=pp_url&entry.1958421517=boilerplate-react)
+
+## About the Project  
+This portfolio is designed as an **interactive experience** rather than a traditional static site.  
+
+- 🎮 You can move a character around a **map-based world**.  
+- 🏢 Each building on the map represents one of my personal projects.  
+- 🔗 Entering a building will redirect you to the related project, so you can explore my work in a fun and engaging way.  
