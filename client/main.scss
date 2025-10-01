@@ -483,3 +483,18 @@
     font-size: 1rem;
   }
 }
+
+@media (max-width: 1710px) {
+  .label-title {
+    font-size: 0.5rem;
+  }
+  
+  .label-description {
+    font-size: 0.35rem;
+    max-width: 215px;
+  }
+  
+  .label-arrow {
+    font-size: 1rem;
+  }
+}

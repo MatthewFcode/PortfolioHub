@@ -1,8 +1,16 @@
+import useLabelZoneBreakPoints from './LabelZones.tsx'
+
 function MatchPredictor() {
+  const labelZones = useLabelZoneBreakPoints()
+  const zone = labelZones.find((m) => m.id === 'MatchPredictor')
+
+  if (!zone) {
+    return null
+  }
   return (
     <div
       className="project-label"
-      style={{ position: 'absolute', left: 938, top: 363 }}
+      style={{ position: 'absolute', left: zone.left, top: zone.top }}
     >
       <div className="label-content">
         <div className="label-title">FurtherForward 🧢</div>
