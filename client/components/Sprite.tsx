@@ -116,6 +116,7 @@ function PlayerSprite({ position, setPosition, containerRef }: Props) {
         setNextFoot((f) => (f === 'left' ? 'right' : 'left'))
       }
     }, 30)
+    return () => clearInterval(interval)
   }
   // 60ms per substep (~16fps)
 
@@ -161,6 +162,25 @@ function PlayerSprite({ position, setPosition, containerRef }: Props) {
         break
     }
   }, [activeKey, isWalking, position]) // reruns when done walking
+
+  useEffect(() => {
+    const handleBlur = () => {
+      setActiveKey(null) // stop movement
+      setIsWalking(false) // reset walking state
+    }
+
+    const handleFocus = () => {
+      setActiveKey(null) // clear any stuck key
+    }
+
+    window.addEventListener('blur', handleBlur)
+    window.addEventListener('focus', handleFocus)
+
+    return () => {
+      window.removeEventListener('blur', handleBlur)
+      window.removeEventListener('focus', handleFocus)
+    }
+  }, [])
 
   return (
     <div
