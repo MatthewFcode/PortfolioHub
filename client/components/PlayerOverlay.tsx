@@ -31,8 +31,8 @@ function PlayerOverlay({ onClose }: WelcomeOverlayProps) {
       <div className="player-speech-bubble">
         <p>This is your character❗❗</p>
         <p>
-          Control them with your arrow keys (running into the buildings takes
-          you to the projects)
+          Control him with your arrow keys (running into the buildings takes you
+          to the projects)
         </p>
         <p>Click anywhere or press any key to continue...</p>
       </div>
