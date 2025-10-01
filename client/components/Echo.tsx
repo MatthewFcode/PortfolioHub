@@ -1,16 +1,3 @@
-// function Echo() {
-//   return (
-//     <div>
-//       <h1>Echo 🔊</h1>
-//       <p>
-//         Echo is a browser based messaging app that allows you to search the user
-//         database and send chats to different people.
-//       </p>
-//     </div>
-//   )
-// }
-
-// export default Echo
 function Echo() {
   return (
     <div
