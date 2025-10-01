@@ -85,9 +85,6 @@ function PlayerSprite({ position, setPosition, containerRef }: Props) {
     const maxX = rect.width - spriteWidthNum
     const maxY = rect.height - spriteWidthNum
 
-    // const targetX = Math.min(Math.max(position.x + dx, 0), maxX)
-    // const targetY = Math.min(Math.max(position.y + dy, 0), maxY)
-
     setDirection(newDir)
     setIsWalking(true)
 
@@ -115,7 +112,7 @@ function PlayerSprite({ position, setPosition, containerRef }: Props) {
         setFrame('stand')
         setNextFoot((f) => (f === 'left' ? 'right' : 'left'))
       }
-    }, 30)
+    }, 10)
     return () => clearInterval(interval)
   }
   // 60ms per substep (~16fps)
