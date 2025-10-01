@@ -1,17 +1,3 @@
-// function MatchPredictor() {
-//   return (
-//     <div>
-//       <h1>Premier League Match Predictor ⚽ (COMING SOON.....)</h1>
-//       <p>
-//         This is an app that integrates AI to predict upcoming Premier League
-//         results.
-//       </p>
-//     </div>
-//   )
-// }
-
-// export default MatchPredictor
-
 function MatchPredictor() {
   return (
     <div
