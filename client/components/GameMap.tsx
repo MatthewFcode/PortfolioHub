@@ -1,48 +1,16 @@
 import { useRef, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router'
-import { Zones } from '../../models/zones.ts'
-
+import useZoneBreakPoints from './Zones.tsx'
 import map from '../../src/assets/images/portfolio.gif'
 import PlayerSprite from './Sprite.tsx'
 
-const zones: Zones[] = [
-  {
-    id: 'InsightStack',
-    x: 380,
-    y: 265,
-    width: 330,
-    height: 220,
-    redirectUrl: 'https://github.com/MatthewFcode/InsightStack',
-  },
-  {
-    id: 'FilmFeel',
-    x: 1540,
-    y: 95,
-    width: 160,
-    height: 120,
-    redirectUrl: 'https://github.com/MatthewFcode/FilmFeel-API',
-  },
-  {
-    id: 'Whats Up',
-    x: 1220,
-    y: 100,
-    width: 160,
-    height: 115,
-    redirectUrl: 'https://whats-up-zh1w.onrender.com/',
-  },
-  {
-    id: 'FurtherForward Web App',
-    x: 980,
-    y: 470,
-    width: 200,
-    height: 325,
-    redirectUrl: 'https://further-forward-webapp-yep.onrender.com/',
-  },
-]
 function GameMap() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [position, setPosition] = useState({ x: 65, y: 475 }) // adjust starting position
   const [coolDown, setCoolDown] = useState(false)
+
+  const zones = useZoneBreakPoints()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handleFocus = () => {
@@ -52,8 +20,6 @@ function GameMap() {
     window.addEventListener('focus', handleFocus)
     return () => window.removeEventListener('focus', handleFocus)
   }, [])
-
-  const navigate = useNavigate()
 
   useEffect(() => {
     if (coolDown) {

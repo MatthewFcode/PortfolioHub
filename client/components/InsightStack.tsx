@@ -1,8 +1,18 @@
+import useLabelZoneBreakPoints from './LabelZones.tsx'
+
 function InsightStack() {
+  const labelZones = useLabelZoneBreakPoints()
+
+  const zone = labelZones.find((m) => m.id === 'InsightStack')
+
+  if (!zone) {
+    return null
+  }
+
   return (
     <div
       className="project-label"
-      style={{ position: 'absolute', left: 418, top: 168 }}
+      style={{ position: 'absolute', left: zone.left, top: zone.top }}
     >
       <div className="label-content">
         <div className="label-title">InsightStack 🗂️</div>

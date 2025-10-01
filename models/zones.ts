@@ -6,3 +6,9 @@ export interface Zones {
   height: number
   redirectUrl: string
 }
+
+export interface LabelZones {
+  id: string
+  left: number
+  top: number
+}
