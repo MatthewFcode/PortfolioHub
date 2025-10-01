@@ -28,7 +28,7 @@ const zones: Zones[] = [
     y: 100,
     width: 235,
     height: 160,
-    redirectUrl: 'https://github.com/hotoke-2025/whats-up',
+    redirectUrl: 'https://whats-up-zh1w.onrender.com/',
   },
   {
     id: 'FurtherForward Web App',
