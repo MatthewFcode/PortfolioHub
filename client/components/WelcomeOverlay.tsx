@@ -22,7 +22,7 @@ function WelcomeOverlay({ onClose }: WelcomeOverlayProps) {
     <div className="welcome-overlay">
       <div className="welcome-modal">
         <h1>Welcome to my Portfolio Hub❗❗</h1>
-        <h2>Control the character with your arrows on your keyboard!!</h2>
+        <h2>Control the character with arrows on your keyboard!!</h2>
         <p>
           Go into the buildings with labels on them to be redirected to the
           projects in another window!!
