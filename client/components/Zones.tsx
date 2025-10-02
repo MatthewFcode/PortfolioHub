@@ -51,7 +51,7 @@ const zonesLaptop: Zones[] = [
     y: 175,
     width: 140,
     height: 60,
-    redirectUrl: 'https://github.com/MatthewFcode/FilmFeel-API',
+    redirectUrl: 'https://filmfeel-api.onrender.com',
   },
   {
     id: 'Whats Up',
