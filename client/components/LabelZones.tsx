@@ -60,7 +60,7 @@ const labelZonesJpLaptop: LabelZones[] = [
   },
   {
     id: 'FilmFeels',
-    left: 1030,
+    left: 1065,
     top: 20,
   },
   {
