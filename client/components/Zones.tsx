@@ -82,7 +82,7 @@ const zonesJpLaptop: Zones[] = [
   },
   {
     id: 'FilmFeel',
-    x: 950,
+    x: 980,
     y: 115,
     width: 120,
     height: 20,
@@ -98,7 +98,7 @@ const zonesJpLaptop: Zones[] = [
   },
   {
     id: 'FurtherForward Web App',
-    x: 660,
+    x: 667,
     y: 325,
     width: 180,
     height: 215,
