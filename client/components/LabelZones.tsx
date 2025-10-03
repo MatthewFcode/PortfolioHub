@@ -27,12 +27,12 @@ const labelZonesMonitor: LabelZones[] = [
 const labelZonesLaptop: LabelZones[] = [
   {
     id: 'InsightStack',
-    left: 365,
+    left: 355,
     top: 188,
   },
   {
     id: 'Echo',
-    left: 1015,
+    left: 1065,
     top: 77,
   },
   {
@@ -42,7 +42,7 @@ const labelZonesLaptop: LabelZones[] = [
   },
   {
     id: 'MatchPredictor',
-    left: 815,
+    left: 800,
     top: 348,
   },
 ]
