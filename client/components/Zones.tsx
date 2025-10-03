@@ -83,7 +83,7 @@ const zonesJpLaptop: Zones[] = [
   {
     id: 'FilmFeel',
     x: 900,
-    y: 360,
+    y: 40,
     width: 120,
     height: 20,
     redirectUrl: 'https://filmfeel-api.onrender.com',
@@ -110,7 +110,7 @@ export default function useZoneBreakPoints() {
   const [zone, setZone] = useState<Zones[]>(zonesMonitor)
   useEffect(() => {
     const handleBreakPoints = () => {
-      if (window.innerWidth <= 1700) {
+      if (window.innerWidth <= 1500) {
         setZone(zonesJpLaptop)
       }
       if (window.innerWidth < 1710) {
