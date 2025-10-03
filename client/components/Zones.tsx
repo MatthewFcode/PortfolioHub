@@ -82,7 +82,7 @@ const zonesJpLaptop: Zones[] = [
   },
   {
     id: 'FilmFeel',
-    x: 1060,
+    x: 1085,
     y: 115,
     width: 120,
     height: 20,
