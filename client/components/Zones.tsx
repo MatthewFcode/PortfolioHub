@@ -74,7 +74,7 @@ const zonesLaptop: Zones[] = [
 const zonesJpLaptop: Zones[] = [
   {
     id: 'InsightStack',
-    x: 250,
+    x: 265,
     y: 200,
     width: 250,
     height: 120,
@@ -82,16 +82,16 @@ const zonesJpLaptop: Zones[] = [
   },
   {
     id: 'FilmFeel',
-    x: 930,
-    y: 100,
+    x: 100,
+    y: 115,
     width: 120,
     height: 20,
     redirectUrl: 'https://filmfeel-api.onrender.com',
   },
   {
     id: 'Whats Up',
-    x: 840,
-    y: 160,
+    x: 850,
+    y: 130,
     width: 120,
     height: 20,
     redirectUrl: 'https://whats-up-zh1w.onrender.com/',
@@ -99,7 +99,7 @@ const zonesJpLaptop: Zones[] = [
   {
     id: 'FurtherForward Web App',
     x: 670,
-    y: 300,
+    y: 325,
     width: 180,
     height: 215,
     redirectUrl: 'https://further-forward-webapp-yep.onrender.com/',
