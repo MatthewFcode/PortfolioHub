@@ -82,7 +82,7 @@ const zonesJpLaptop: Zones[] = [
   },
   {
     id: 'FilmFeel',
-    x: 100,
+    x: 950,
     y: 115,
     width: 120,
     height: 20,
@@ -91,14 +91,14 @@ const zonesJpLaptop: Zones[] = [
   {
     id: 'Whats Up',
     x: 850,
-    y: 130,
+    y: 110,
     width: 120,
     height: 20,
     redirectUrl: 'https://whats-up-zh1w.onrender.com/',
   },
   {
     id: 'FurtherForward Web App',
-    x: 670,
+    x: 660,
     y: 325,
     width: 180,
     height: 215,

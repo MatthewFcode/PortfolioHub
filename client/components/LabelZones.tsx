@@ -50,17 +50,17 @@ const labelZonesLaptop: LabelZones[] = [
 const labelZonesJpLaptop: LabelZones[] = [
   {
     id: 'InsightStack',
-    left: 310,
-    top: 150,
+    left: 280,
+    top: 120,
   },
   {
     id: 'Echo',
-    left: 800,
+    left: 700,
     top: 20,
   },
   {
     id: 'FilmFeels',
-    left: 1100,
+    left: 1000,
     top: 20,
   },
   {
