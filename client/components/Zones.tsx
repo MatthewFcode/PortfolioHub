@@ -16,7 +16,7 @@ const zonesMonitor: Zones[] = [
     y: 95,
     width: 160,
     height: 120,
-    redirectUrl: 'https://github.com/MatthewFcode/FilmFeel-API',
+    redirectUrl: 'https://filmfeel-api.onrender.com',
   },
   {
     id: 'Whats Up',
