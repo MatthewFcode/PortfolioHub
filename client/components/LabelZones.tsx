@@ -27,22 +27,22 @@ const labelZonesMonitor: LabelZones[] = [
 const labelZonesLaptop: LabelZones[] = [
   {
     id: 'InsightStack',
-    left: 350,
+    left: 371,
     top: 188,
   },
   {
     id: 'Echo',
-    left: 1120,
+    left: 1025,
     top: 77,
   },
   {
     id: 'FilmFeels',
-    left: 1300,
+    left: 1317,
     top: 68,
   },
   {
     id: 'MatchPredictor',
-    left: 780,
+    left: 827,
     top: 348,
   },
 ]
@@ -50,22 +50,22 @@ const labelZonesLaptop: LabelZones[] = [
 const labelZonesJpLaptop: LabelZones[] = [
   {
     id: 'InsightStack',
-    left: 280,
+    left: 273,
     top: 120,
   },
   {
     id: 'Echo',
-    left: 750,
+    left: 775,
     top: 20,
   },
   {
     id: 'FilmFeels',
-    left: 1050,
+    left: 1020,
     top: 20,
   },
   {
     id: 'MatchPredictor',
-    left: 650,
+    left: 637,
     top: 250,
   },
 ]
