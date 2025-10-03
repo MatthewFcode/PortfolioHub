@@ -55,17 +55,17 @@ const labelZonesJpLaptop: LabelZones[] = [
   },
   {
     id: 'Echo',
-    left: 700,
+    left: 750,
     top: 20,
   },
   {
     id: 'FilmFeels',
-    left: 1000,
+    left: 1050,
     top: 20,
   },
   {
     id: 'MatchPredictor',
-    left: 720,
+    left: 650,
     top: 250,
   },
 ]
