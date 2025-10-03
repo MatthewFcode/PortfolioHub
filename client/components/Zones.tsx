@@ -110,7 +110,7 @@ export default function useZoneBreakPoints() {
   const [zone, setZone] = useState<Zones[]>(zonesMonitor)
   useEffect(() => {
     const handleBreakPoints = () => {
-      if (window.innerWidth < 1470) {
+      if (window.innerWidth <= 1470) {
         setZone(zonesJpLaptop)
       }
       if (window.innerWidth < 1710) {
