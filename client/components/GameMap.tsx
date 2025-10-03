@@ -72,7 +72,7 @@ function GameMap() {
             top: z.y,
             width: z.width,
             height: z.height,
-            border: '2px dashed red',
+            //border: '2px dashed red',
             pointerEvents: 'none',
           }}
         />
