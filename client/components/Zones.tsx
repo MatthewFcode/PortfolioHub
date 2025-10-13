@@ -54,12 +54,12 @@ const zonesLaptop: Zones[] = [
     redirectUrl: 'https://filmfeel-api.onrender.com',
   },
   {
-    id: 'Whats Up',
+    id: 'Echo',
     x: 1055,
     y: 175,
     width: 140,
     height: 60,
-    redirectUrl: 'https://whats-up-zh1w.onrender.com/',
+    redirectUrl: 'https://echo.borb.nz/',
   },
   {
     id: 'FurtherForward Web App',
@@ -89,12 +89,12 @@ const zonesJpLaptop: Zones[] = [
     redirectUrl: 'https://filmfeel-api.onrender.com',
   },
   {
-    id: 'Whats Up',
+    id: 'Echo',
     x: 850,
     y: 110,
     width: 120,
     height: 20,
-    redirectUrl: 'https://whats-up-zh1w.onrender.com/',
+    redirectUrl: 'https://echo.borb.nz/',
   },
   {
     id: 'FurtherForward Web App',
