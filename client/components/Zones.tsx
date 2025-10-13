@@ -8,7 +8,7 @@ const zonesMonitor: Zones[] = [
     y: 265,
     width: 330,
     height: 220,
-    redirectUrl: 'https://github.com/MatthewFcode/InsightStack',
+    redirectUrl: 'https://insightstack.borb.nz/',
   },
   {
     id: 'FilmFeel',
@@ -43,7 +43,7 @@ const zonesLaptop: Zones[] = [
     y: 295,
     width: 290,
     height: 170,
-    redirectUrl: 'https://github.com/MatthewFcode/InsightStack',
+    redirectUrl: 'https://insightstack.borb.nz/',
   },
   {
     id: 'FilmFeel',
@@ -78,7 +78,7 @@ const zonesJpLaptop: Zones[] = [
     y: 200,
     width: 250,
     height: 120,
-    redirectUrl: 'https://github.com/MatthewFcode/InsightStack',
+    redirectUrl: 'https://insightstack.borb.nz/',
   },
   {
     id: 'FilmFeel',
