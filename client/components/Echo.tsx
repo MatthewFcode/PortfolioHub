@@ -1,4 +1,3 @@
-
 import useLabelZoneBreakPoints from './LabelZones.tsx'
 
 function Echo() {
@@ -14,7 +13,7 @@ function Echo() {
       style={{ position: 'absolute', left: zone.left, top: zone.top }}
     >
       <div className="label-content">
-        <div className="label-title">Whats Up 📱</div>
+        <div className="label-title">Echo 📱</div>
         <div className="label-description">
           Web based real time messaging application
         </div>
