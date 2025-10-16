@@ -47,6 +47,29 @@ const labelZonesLaptop: LabelZones[] = [
   },
 ]
 
+const labelZonesMacbookAir: LabelZones[] = [
+  {
+    id: 'InsightStack',
+    left: 321,
+    top: 154,
+  },
+  {
+    id: 'Echo',
+    left: 903,
+    top: 48,
+  },
+  {
+    id: 'FilmFeels',
+    left: 1187.25,
+    top: 44,
+  },
+  {
+    id: 'MatchPredictor',
+    left: 734,
+    top: 300,
+  },
+]
+
 const labelZonesJpLaptop: LabelZones[] = [
   {
     id: 'InsightStack',
@@ -74,8 +97,10 @@ export default function useLabelZoneBreakPoints() {
   const [zone, setZone] = useState<LabelZones[]>(labelZonesMonitor)
   useEffect(() => {
     const handleBreakPoints = () => {
-      if (window.innerWidth < 1500) {
+      if (window.innerWidth < 1440) {
         setZone(labelZonesJpLaptop)
+      } else if (window.innerWidth < 1500) {
+        setZone(labelZonesMacbookAir)
       } else if (window.innerWidth < 1710) {
         setZone(labelZonesLaptop)
       } else if (window.innerWidth < 2000) {

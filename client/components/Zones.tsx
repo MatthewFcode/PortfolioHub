@@ -106,12 +106,49 @@ const zonesJpLaptop: Zones[] = [
   },
 ]
 
+const zonesMacbookAir: Zones[] = [
+  {
+    id: 'InsightStack',
+    x: 297.5,
+    y: 247.5,
+    width: 270,
+    height: 145,
+    redirectUrl: 'https://insightstack.borb.nz/',
+  },
+  {
+    id: 'FilmFeel',
+    x: 1212.5,
+    y: 145,
+    width: 130,
+    height: 40,
+    redirectUrl: 'https://filmfeels.borb.nz/',
+  },
+  {
+    id: 'Echo',
+    x: 952.5,
+    y: 142.5,
+    width: 130,
+    height: 40,
+    redirectUrl: 'https://echo.borb.nz/',
+  },
+  {
+    id: 'FurtherForward Web App',
+    x: 753.5,
+    y: 397.5,
+    width: 185,
+    height: 242.5,
+    redirectUrl: 'https://further-forward-webapp-yep.onrender.com/',
+  },
+]
+
 export default function useZoneBreakPoints() {
   const [zone, setZone] = useState<Zones[]>(zonesMonitor)
   useEffect(() => {
     const handleBreakPoints = () => {
-      if (window.innerWidth < 1500) {
+      if (window.innerWidth < 1440) {
         setZone(zonesJpLaptop)
+      } else if (window.innerWidth < 1500) {
+        setZone(zonesMacbookAir)
       } else if (window.innerWidth < 1710) {
         setZone(zonesLaptop)
       } else if (window.innerWidth < 2000) {
