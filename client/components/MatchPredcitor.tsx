@@ -1,6 +1,4 @@
-
 import useLabelZoneBreakPoints from './LabelZones.tsx'
-
 
 function MatchPredictor() {
   const labelZones = useLabelZoneBreakPoints()
@@ -15,12 +13,10 @@ function MatchPredictor() {
       style={{ position: 'absolute', left: zone.left, top: zone.top }}
     >
       <div className="label-content">
-        <div className="label-title">FurtherForward 🧢</div>
+        <div className="label-title">Match Model ⚽</div>
 
         <div className="label-description">
-          {/* AI-powered Premier League predictions (Coming Soon) */}
-          Draft website for solo business that I created before the Dev Academy
-          bootcamp
+          Machine Learning and AI-powered Premier League predictions
         </div>
       </div>
       <div className="label-arrow">↓</div>
