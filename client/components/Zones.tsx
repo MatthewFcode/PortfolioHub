@@ -27,12 +27,12 @@ const zonesMonitor: Zones[] = [
     redirectUrl: 'https://echo.borb.nz/',
   },
   {
-    id: 'FurtherForward Web App',
+    id: 'Match Model',
     x: 980,
     y: 470,
     width: 200,
     height: 325,
-    redirectUrl: 'https://further-forward-webapp-yep.onrender.com/',
+    redirectUrl: 'https://github.com/MatthewFcode/PL-Match-Model',
   },
 ]
 
@@ -62,12 +62,12 @@ const zonesLaptop: Zones[] = [
     redirectUrl: 'https://echo.borb.nz/',
   },
   {
-    id: 'FurtherForward Web App',
+    id: 'Match Model',
     x: 840,
     y: 470,
     width: 190,
     height: 270,
-    redirectUrl: 'https://further-forward-webapp-yep.onrender.com/',
+    redirectUrl: 'https://github.com/MatthewFcode/PL-Match-Model',
   },
 ]
 
@@ -97,12 +97,12 @@ const zonesJpLaptop: Zones[] = [
     redirectUrl: 'https://echo.borb.nz/',
   },
   {
-    id: 'FurtherForward Web App',
+    id: 'Match Model',
     x: 667,
     y: 325,
     width: 180,
     height: 215,
-    redirectUrl: 'https://further-forward-webapp-yep.onrender.com/',
+    redirectUrl: 'https://github.com/MatthewFcode/PL-Match-Model',
   },
 ]
 
@@ -132,12 +132,12 @@ const zonesMacbookAir: Zones[] = [
     redirectUrl: 'https://echo.borb.nz/',
   },
   {
-    id: 'FurtherForward Web App',
+    id: 'Match Model',
     x: 753.5,
     y: 397.5,
     width: 185,
     height: 242.5,
-    redirectUrl: 'https://further-forward-webapp-yep.onrender.com/',
+    redirectUrl: 'https://github.com/MatthewFcode/PL-Match-Model',
   },
 ]
 
