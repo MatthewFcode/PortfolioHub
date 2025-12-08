@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import background from '../../src/assets/images/sometimes-portfolio.gif'
 import HamburgerInfo from './HamburgerInfo.tsx'
+import Content from './InfoContent.tsx'
 function Info() {
   const containerRef = useRef<HTMLDivElement>(null)
   return (
@@ -16,6 +17,8 @@ function Info() {
         overflow: 'hidden',
       }}
     >
+      {' '}
+      <Content />
       <HamburgerInfo />
     </div>
   )
