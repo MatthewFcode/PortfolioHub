@@ -7,6 +7,7 @@ import MatchPredictor from './MatchPredcitor.tsx'
 import InsightStack from './InsightStack.tsx'
 import FilmFeels from './FilmFeels.tsx'
 import Echo from './Echo.tsx'
+import HamburgerMenu from './Hamburger.tsx'
 function App() {
   //   const [showOverlay, setShowOverlay] = useState(false)
   const [overlayStep, setOverlayStep] = useState<0 | 1 | 2>(0)
@@ -39,6 +40,7 @@ function App() {
       <div
         style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}
       >
+        <HamburgerMenu />
         <GameMap />
       </div>
     </>
