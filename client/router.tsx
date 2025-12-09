@@ -1,21 +1,3 @@
-// import {
-//   createBrowserRouter,
-//   createRoutesFromElements,
-//   Route,
-// } from 'react-router'
-// import Info from './components/Info.tsx'
-// import App from './components/App'
-
-// const routes = createRoutesFromElements(
-//   <>
-//     <Route path="/" element={<App />} />
-//     <Route path="/info" element={<Info />} />
-//   </>,
-// )
-
-// const router = createBrowserRouter(routes)
-
-// export default router
 import {
   createBrowserRouter,
   createRoutesFromElements,
