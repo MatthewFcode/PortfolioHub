@@ -21,11 +21,6 @@ function Content() {
           <video className="project-image" autoPlay loop muted playsInline>
             <source src="/videos/insightstack.mp4" type="video/mp4" />
           </video>
-          {/* <img
-            src="/src/assets/images/placeholder.png"
-            alt="InsightStack-demo"
-            className="project-image"
-          /> */}
 
           <div className="tech-stack">
             <h3 className="section-title">Tech Stack:</h3>
