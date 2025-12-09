@@ -69,11 +69,14 @@ function Content() {
             </div>
           </div>
 
-          <img
+          {/* <img
             src="/src/assets/images/placeholder.png"
             alt="Echo-demo"
             className="project-image"
-          />
+          /> */}
+          <video className="project-image" autoPlay loop muted playsInline>
+            <source src="/videos/echo.mp4" type="video/mp4" />
+          </video>
 
           <div className="tech-stack">
             <h3 className="section-title">Tech Stack:</h3>
