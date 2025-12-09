@@ -9,11 +9,18 @@ function Content() {
             <div className="project-links">
               <a
                 href="https://github.com/MatthewFcode/InsightStack"
+                target="_blank"
                 className="pixel-button"
+                rel="noreferrer"
               >
                 GitHub
               </a>
-              <a href="https://insightstack.borb.nz/" className="pixel-button">
+              <a
+                href="https://insightstack.borb.nz/"
+                target="_blank"
+                className="pixel-button"
+                rel="noreferrer"
+              >
                 Live Site
               </a>
             </div>
@@ -54,21 +61,23 @@ function Content() {
             <div className="project-links">
               <a
                 href="https://github.com/MatthewFcode/Echo"
+                target="_blank"
                 className="pixel-button"
+                rel="noreferrer"
               >
                 GitHub
               </a>
-              <a href="https://echo.borb.nz/" className="pixel-button">
+              <a
+                href="https://echo.borb.nz/"
+                target="_blank"
+                className="pixel-button"
+                rel="noreferrer"
+              >
                 Live Site
               </a>
             </div>
           </div>
 
-          {/* <img
-            src="/src/assets/images/placeholder.png"
-            alt="Echo-demo"
-            className="project-image"
-          /> */}
           <video className="project-image" autoPlay loop muted playsInline>
             <source src="/videos/echo.mp4" type="video/mp4" />
           </video>
@@ -108,10 +117,17 @@ function Content() {
               <a
                 href="https://github.com/MatthewFcode/FilmFeel-API"
                 className="pixel-button"
+                target="_blank"
+                rel="noreferrer"
               >
                 GitHub
               </a>
-              <a href="https://filmfeels.borb.nz/" className="pixel-button">
+              <a
+                href="https://filmfeels.borb.nz/"
+                target="_blank"
+                className="pixel-button"
+                rel="noreferrer"
+              >
                 Live Site
               </a>
             </div>
@@ -155,7 +171,9 @@ function Content() {
             <div className="project-links">
               <a
                 href="https://github.com/MatthewFcode/PL-Match-Model"
+                target="_blank"
                 className="pixel-button"
+                rel="noreferrer"
               >
                 GitHub
               </a>
