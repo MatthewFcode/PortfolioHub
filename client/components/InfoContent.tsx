@@ -214,6 +214,56 @@ function Content() {
             League information.
           </p>
         </div>
+        <div className="project-card">
+          <div className="project-header">
+            <h2 className="project-title">ETNZ Dashboard</h2>
+            <div className="project-links">
+              <a
+                href="https://github.com/MatthewFcode/ETNZ-Dashboard"
+                target="_blank"
+                className="pixel-button"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://etnz-dashboard.borb.nz/"
+                target="_blank"
+                className="pixel-button"
+                rel="noreferrer"
+              >
+                Live Site
+              </a>
+            </div>
+          </div>
+
+          <video className="project-image" autoPlay loop muted playsInline>
+            <source src="" type="video/mp4" />
+          </video>
+
+          <div className="tech-stack">
+            <h3 className="section-title">Tech Stack:</h3>
+            <div className="tech-tags">
+              <span className="tech-tag">React.js</span>
+              <span className="tech-tag">TypeScript</span>
+              <span className="tech-tag">JavaScript</span>
+              <span className="tech-tag">WebSockets</span>
+              <span className="tech-tag">Express.js</span>
+              <span className="tech-tag">Vite</span>
+              <span className="tech-tag">Knex.js</span>
+              <span className="tech-tag">SQLite3</span>
+            </div>
+          </div>
+
+          <p className="project-description">
+            ETNZ is a mock live dashboard for displaying high frequency data
+            with low latency to a user interface. The main challenge in this
+            project was compiling the different data entry points in different
+            React components on the front end. The fix was using the useContext
+            React hook to globalise state across different React
+            components.{' '}
+          </p>
+        </div>
       </div>
     </div>
   )
