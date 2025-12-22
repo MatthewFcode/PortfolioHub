@@ -238,7 +238,7 @@ function Content() {
           </div>
 
           <video className="project-image" autoPlay loop muted playsInline>
-            <source src="" type="video/mp4" />
+            <source src="/videos/etnz.mp4" type="video/mp4" />
           </video>
 
           <div className="tech-stack">
