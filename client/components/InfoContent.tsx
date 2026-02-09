@@ -264,6 +264,61 @@ function Content() {
             components.{' '}
           </p>
         </div>
+        <div className="project-card">
+          <div className="project-header">
+            <h2 className="project-title">Don Foley CV Hub</h2>
+            <div className="project-links">
+              <a
+                href="https://github.com/MatthewFcode/Don-Foley-Hub"
+                target="_blank"
+                className="pixel-button"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://donfoley.borb.nz/"
+                target="_blank"
+                className="pixel-button"
+                rel="noreferrer"
+              >
+                Live Site
+              </a>
+            </div>
+          </div>
+
+          <video className="project-image" autoPlay loop muted playsInline>
+            <source src="/videos/etnz.mp4" type="video/mp4" />
+          </video>
+
+          <div className="tech-stack">
+            <h3 className="section-title">Tech Stack:</h3>
+            <div className="tech-tags">
+              <span className="tech-tag">React.js</span>
+              <span className="tech-tag">TypeScript</span>
+              <span className="tech-tag">JavaScript</span>
+              <span className="tech-tag">Supabase</span>
+              <span className="tech-tag">LangChain</span>
+              <span className="tech-tag">Langfuse</span>
+              <span className="tech-tag">Express.js</span>
+              <span className="tech-tag">Vite</span>
+            </div>
+          </div>
+
+          <p className="project-description">
+            This project was for my Dad to make his background easier to
+            navigate and explore for potential employers (due to his CV being
+            too long with his amount of experience). It is built using
+            TypeScript and React for all of the front end features. It then has
+            a node.js and express.js backend for the chatbot. The chat bot is
+            built using RAG and Supabase to allow for the AI to be given the
+            right information from my Dads CV to accurately respond to any
+            queries about his experience. The biggest challenge in this project
+            was finding the correct chunk size and setting the best chunk
+            overlap for embedding the CV related documents as vectors into the
+            supabase vector database.
+          </p>
+        </div>
       </div>
     </div>
   )
