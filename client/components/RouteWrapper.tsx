@@ -29,7 +29,7 @@ export default function RouteWrapper({ children }: Props) {
     const to = location.pathname
 
     const isRootToInfo =
-      (from === '/' && to === '/info') || (from === '/info' && to === '/')
+      (from === '/' && to === '/game') || (from === '/game' && to === '/')
 
     if (isRootToInfo) {
       setLoading(true)

@@ -13,15 +13,15 @@ const routes = createRoutesFromElements(
       path="/"
       element={
         <RouteWrapper>
-          <App />
+          <Info />
         </RouteWrapper>
       }
     />
     <Route
-      path="/info"
+      path="/game"
       element={
         <RouteWrapper>
-          <Info />
+          <App />
         </RouteWrapper>
       }
     />
