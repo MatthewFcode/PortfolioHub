@@ -15,10 +15,11 @@ function Content() {
 
   return (
     <div className="info-container">
-      <div>
+      <div className="search-container">
         <input
           type="text"
-          placeholder="..Search projects"
+          className="search-input"
+          placeholder="Search projects..."
           value={search}
           onChange={(event) => setSearch(event.target.value)}
         />

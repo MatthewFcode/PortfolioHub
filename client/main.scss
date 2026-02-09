@@ -530,10 +530,12 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+ // grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(3, 500px);
   gap: 2.5rem;
   max-width: 1600px;
-  margin: 0 auto;
+
+  margin: 2rem auto;
   padding-bottom: 2rem;
 }
 
@@ -758,5 +760,56 @@
   
   .project-description {
     font-size: 0.5rem;
+  }
+}
+
+
+// search bar styles for the project page
+.search-container {
+  max-width: 1600px;
+  margin: 0 auto 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+// Search bar input
+.search-input {
+  width: 100%;
+  max-width: 600px;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+  border: 5px solid #5D4E37;
+  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  font-size: 0.75rem;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  color: #2c3e50;
+  box-shadow: 
+    0 0 0 2px #8B7355,
+    0 5px 0 #3d3d3d,
+    0 6px 15px rgba(0, 0, 0, 0.4),
+    inset 0 2px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  text-shadow: 0.5px 0.5px 0 rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.5px;
+  
+  &::placeholder {
+    color: #7f8c8d;
+    opacity: 0.7;
+  }
+  
+  &:focus {
+    outline: none;
+    background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
+    border-color: #293829da;
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 
+      0 0 0 2px #8B7355,
+      0 3px 0 #3d3d3d,
+      0 4px 10px rgba(0, 0, 0, 0.4),
+      inset 0 2px 0 rgba(0, 0, 0, 0.1);
   }
 }
