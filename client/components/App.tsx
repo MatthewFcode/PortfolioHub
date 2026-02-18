@@ -12,7 +12,7 @@ function App() {
   //   const [showOverlay, setShowOverlay] = useState(false)
   const [overlayStep, setOverlayStep] = useState<0 | 1 | 2>(0)
   const location = useLocation()
-  const isHomePage = location.pathname === '/'
+  const isHomePage = location.pathname === '/game'
 
   useEffect(() => {
     if (isHomePage) {

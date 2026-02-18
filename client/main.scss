@@ -1,3 +1,842 @@
+// .welcome-overlay {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   background-color: rgba(50, 50, 50, 0.7);
+//   backdrop-filter: blur(4px);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 1000;
+//   animation: fadeIn 0.3s ease-in;
+//   image-rendering: pixelated;
+//   image-rendering: -moz-crisp-edges;
+//   image-rendering: crisp-edges;
+// }
+
+// .welcome-modal {
+//   background: linear-gradient(180deg, #87CEEB 0%, #98D8E8 100%);
+//   border: 6px solid #5D4E37;
+//   border-radius: 4px;
+//   padding: 3rem;
+//   max-width: 600px;
+//   width: 90%;
+//   box-shadow: 
+//     0 0 0 3px #8B7355,
+//     0 8px 0 #3d3d3d,
+//     0 8px 20px rgba(0, 0, 0, 0.4);
+//   animation: slideUp 0.4s ease-out;
+//   text-align: center;
+//   position: relative;
+  
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: 12px;
+//     left: 12px;
+//     right: 12px;
+//     bottom: 12px;
+//     border: 2px dashed rgba(255, 255, 255, 0.3);
+//     pointer-events: none;
+//   }
+  
+//   h1 {
+//     font-size: 1.35rem;
+//     margin-bottom: 1rem;
+//     font-weight: 900;
+//     color: #2c3e50;
+//     text-shadow: 
+//       3px 3px 0 #fff,
+//       4px 4px 0 rgba(0, 0, 0, 0.2);
+//     letter-spacing: 2px;
+//     font-family: 'Press Start 2P', 'Courier New', monospace;
+//     line-height: 1.4;
+//   }
+  
+//   h2 {
+//     font-size: 1.1rem;
+//     margin-bottom: 1.5rem;
+//     font-weight: 600;
+//     color: #34495e;
+//     text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+//     font-family: 'Press Start 2P', 'Courier New', monospace;
+//     line-height: 1.6;
+//   }
+  
+//   p {
+//     font-size: 1rem;
+//     line-height: 1.8;
+//     margin-bottom: 2rem;
+//     color: #2c3e50;
+//     font-family: 'Press Start 2P', 'Courier New', monospace;
+//     text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+//   }
+  
+//   button {
+//     background: linear-gradient(180deg, #4CAF50 0%, #45a049 100%);
+//     color: white;
+//     border: 4px solid #2d6b2f;
+//     border-radius: 4px;
+//     padding: 1rem 2.5rem;
+//     font-size: 1.1rem;
+//     font-weight: 700;
+//     cursor: pointer;
+//     transition: all 0.1s ease;
+//     box-shadow: 
+//       0 6px 0 #2d6b2f,
+//       0 8px 10px rgba(0, 0, 0, 0.3);
+//     font-family: 'Press Start 2P', 'Courier New', monospace;
+//     text-transform: uppercase;
+//     letter-spacing: 1px;
+//     position: relative;
+    
+//     &:hover {
+//       background: linear-gradient(180deg, #5cb860 0%, #4CAF50 100%);
+//       transform: translateY(-2px);
+//       box-shadow: 
+//         0 8px 0 #2d6b2f,
+//         0 10px 15px rgba(0, 0, 0, 0.3);
+//     }
+    
+//     &:active {
+//       transform: translateY(4px);
+//       box-shadow: 
+//         0 2px 0 #2d6b2f,
+//         0 4px 5px rgba(0, 0, 0, 0.3);
+//     }
+//   }
+// }
+
+// // Add pixel decorations
+// .welcome-modal::after {
+//   content: '🌳 🏢 🌳';
+//   position: absolute;
+//   bottom: -30px;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   font-size: 1.5rem;
+//   filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.3));
+// }
+
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//   }
+//   to {
+//     opacity: 1;
+//   }
+// }
+
+// @keyframes slideUp {
+//   from {
+//     opacity: 0;
+//     transform: translateY(30px) scale(0.9);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0) scale(1);
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .welcome-modal {
+//     padding: 2rem 1.5rem;
+    
+//     h1 {
+//       font-size: 1.5rem;
+//     }
+    
+//     h2 {
+//       font-size: 0.8rem;
+//     }
+    
+//     p {
+//       font-size: 0.75rem;
+//     }
+    
+//     button {
+//       font-size: 0.9rem;
+//       padding: 0.8rem 2rem;
+//     }
+//   }
+// }
+
+// // Player Overlay Styles
+// .player-overlay {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   z-index: 1001;
+//   animation: fadeIn 0.3s ease-in;
+//   cursor: pointer;
+  
+//   // Blur everything
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     backdrop-filter: blur(8px);
+//     background-color: rgba(0, 0, 0, 0.5);
+//     z-index: 1;
+//     // Cut out a hole for the spotlight
+//     -webkit-mask-image: radial-gradient(
+//       circle 75px at 110px 530px,
+//       transparent 0%,
+//       transparent 100%,
+//       black 100%
+//     );
+//     mask-image: radial-gradient(
+//       circle 75px at 110px 530px,
+//       transparent 0%,
+//       transparent 100%,
+//       black 100%
+//     );
+//   }
+  
+//   // Dark overlay with spotlight cutout
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: radial-gradient(
+//       circle 75px at 110px 530px,
+//       transparent 0%,
+//       transparent 75px,
+//       rgba(0, 0, 0, 0.7) 75px
+//     );
+//     z-index: 2;
+//     pointer-events: none;
+//   }
+  
+//   // Spotlight glow around player
+//   .spotlight {
+//     position: absolute;
+//     left: 110px;
+//     top: 530px;
+//     width: 150px;
+//     height: 150px;
+//     transform: translate(-50%, -50%);
+//     border-radius: 50%;
+//     box-shadow: 
+//       0 0 40px 10px rgba(255, 255, 0, 0.3),
+//       0 0 60px 20px rgba(255, 255, 0, 0.2);
+//     z-index: 3;
+//     pointer-events: none;
+//     animation: pulse 2s ease-in-out infinite;
+//   }
+// }
+
+// .player-speech-bubble {
+//   position: absolute;
+//   left: 210px; // Position to the right of player
+//   top: 423px; // Slightly above player
+//   background: linear-gradient(180deg, #87CEEB 0%, #98D8E8 100%);
+//   border: 5px solid #5D4E37;
+//   border-radius: 8px;
+//   padding: 1.5rem;
+//   max-width: 350px;
+//   box-shadow: 
+//     0 0 0 3px #A0522D,
+//     0 6px 0 #654321,
+//     0 6px 15px rgba(0, 0, 0, 0.4);
+//   z-index: 3;
+//   animation: bounceIn 0.5s ease-out;
+//   image-rendering: pixelated;
+//   image-rendering: -moz-crisp-edges;
+//   image-rendering: crisp-edges;
+  
+//   // Arrow pointing to player
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     left: -20px;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     width: 0;
+//     height: 0;
+//     border-top: 15px solid transparent;
+//     border-bottom: 15px solid transparent;
+//     border-right: 20px solid #8B4513;
+//   }
+  
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     left: -12px;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     width: 0;
+//     height: 0;
+//     border-top: 12px solid transparent;
+//     border-bottom: 12px solid transparent;
+//     border-right: 15px solid #FFE5B4;
+//   }
+  
+//   p {
+//     font-size: 0.85rem;
+//     line-height: 1.6;
+//     margin-bottom: 0.8rem;
+//     color: #2c3e50;
+//     font-family: 'Press Start 2P', 'Courier New', monospace;
+//     text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+    
+//     &:last-of-type {
+//       margin-bottom: 0;
+//       font-size: 0.75rem;
+//       color: #666;
+//       font-style: italic;
+//     }
+//   }
+// }
+
+
+
+// @keyframes pulse {
+//   0%, 100% {
+//     box-shadow: 
+//       0 0 40px 10px rgba(255, 255, 0, 0.3),
+//       0 0 60px 20px rgba(255, 255, 0, 0.2);
+//   }
+//   50% {
+//     box-shadow: 
+//       0 0 50px 15px rgba(255, 255, 0, 0.4),
+//       0 0 70px 25px rgba(255, 255, 0, 0.3);
+//   }
+// }
+
+// @keyframes bounceIn {
+//   0% {
+//     opacity: 0;
+//     transform: scale(0.3) translateX(-20px);
+//   }
+//   50% {
+//     transform: scale(1.05) translateX(0);
+//   }
+//   70% {
+//     transform: scale(0.95) translateX(0);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: scale(1) translateX(0);
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .welcome-modal {
+//     padding: 2rem 1.5rem;
+    
+//     h1 {
+//       font-size: 1.5rem;
+//     }
+    
+//     h2 {
+//       font-size: 0.8rem;
+//     }
+    
+//     p {
+//       font-size: 0.75rem;
+//     }
+    
+//     button {
+//       font-size: 0.9rem;
+//       padding: 0.8rem 2rem;
+//     }
+//   }
+  
+//   .player-speech-bubble {
+//     left: 50%;
+//     top: 100px;
+//     transform: translateX(-50%);
+//     max-width: 85%;
+    
+//     &::before,
+//     &::after {
+//       left: 50%;
+//       top: auto;
+//       bottom: -20px;
+//       transform: translateX(-50%) rotate(90deg);
+//     }
+//   }
+// }
+
+// // styles for the builiding labels
+// .project-label {
+//   font-family: 'Press Start 2P', 'Courier New', monospace;
+//   image-rendering: pixelated;
+//   image-rendering: -moz-crisp-edges;
+//   image-rendering: crisp-edges;
+//   pointer-events: none;
+//   z-index: 10;
+//   animation: float 2s ease-in-out infinite;
+// }
+
+// .label-content {
+//   background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+//   border: 4px solid #333;
+//   border-radius: 2px;
+//   padding: 0.75rem 1rem;
+//   box-shadow: 
+//     0 0 0 2px #666,
+//     0 4px 0 #222,
+//     0 6px 10px rgba(0, 0, 0, 0.5),
+//     inset 0 2px 0 rgba(255, 255, 255, 0.5);
+//   position: relative;
+//   animation: pulse-border 1.5s ease-in-out infinite;
+
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: 4px;
+//     left: 4px;
+//     right: 4px;
+//     bottom: 4px;
+//     border: 1px dashed rgba(0, 0, 0, 0.2);
+//     pointer-events: none;
+//   }
+// }
+
+// .label-title {
+//   font-size: 0.65rem;
+//   color: #2c3e50;
+//   margin-bottom: 0.3rem;
+//   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+//   white-space: nowrap;
+//   letter-spacing: 0.5px;
+// }
+
+// .label-description {
+//   font-size: 0.45rem;
+//   color: #555;
+//   line-height: 1.4;
+//   text-shadow: 0.5px 0.5px 0 rgba(255, 255, 255, 0.6);
+//   max-width: 250px;
+// }
+
+// .label-arrow {
+//   text-align: center;
+//   font-size: 1.2rem;
+//   color: #333;
+//   margin-top: 0.25rem;
+//   animation: bounce-arrow 0.8s ease-in-out infinite;
+//   filter: drop-shadow(1px 1px 0 rgba(255, 255, 255, 0.8));
+// }
+
+// @keyframes float {
+//   0%, 100% {
+//     transform: translateY(0px);
+//   }
+//   50% {
+//     transform: translateY(-8px);
+//   }
+// }
+
+// @keyframes pulse-border {
+//   0%, 100% {
+//     box-shadow: 
+//       0 0 0 2px #666,
+//       0 4px 0 #222,
+//       0 6px 10px rgba(0, 0, 0, 0.5),
+//       inset 0 2px 0 rgba(255, 255, 255, 0.5);
+//   }
+//   50% {
+//     box-shadow: 
+//       0 0 0 2px #888,
+//       0 4px 0 #333,
+//       0 6px 10px rgba(0, 0, 0, 0.5),
+//       inset 0 2px 0 rgba(255, 255, 255, 0.7),
+//       0 0 20px rgba(255, 255, 255, 0.3);
+//   }
+// }
+
+// @keyframes bounce-arrow {
+//   0%, 100% {
+//     transform: translateY(0px);
+//   }
+//   50% {
+//     transform: translateY(4px);
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .label-title {
+//     font-size: 0.5rem;
+//   }
+  
+//   .label-description {
+//     font-size: 0.35rem;
+//     max-width: 150px;
+//   }
+  
+//   .label-arrow {
+//     font-size: 1rem;
+//   }
+// }
+
+// @media (max-width: 1710px) {
+//   .label-title {
+//     font-size: 0.5rem;
+//   }
+  
+//   .label-description {
+//     font-size: 0.35rem;
+//     max-width: 215px;
+//   }
+  
+//   .label-arrow {
+//     font-size: 1rem;
+//   }
+// }
+
+// // //  styles for the boboclart information page 
+// .info-container {
+//   width: 100%;
+//   height: 100%;
+//   overflow-y: auto;
+//   padding: 2rem;
+//   font-family: 'Press Start 2P', 'Courier New', monospace;
+//   image-rendering: pixelated;
+//   image-rendering: -moz-crisp-edges;
+//   image-rendering: crisp-edges;
+  
+//   // Custom scrollbar
+//   &::-webkit-scrollbar {
+//     width: 16px;
+//   }
+  
+//   &::-webkit-scrollbar-track {
+//     background: rgba(0, 0, 0, 0.3);
+//     border: 2px solid #5D4E37;
+//   }
+  
+//   &::-webkit-scrollbar-thumb {
+//     background: linear-gradient(180deg, #8B7355 0%, #5D4E37 100%);
+//     border: 2px solid #3d3d3d;
+    
+//     &:hover {
+//       background: linear-gradient(180deg, #9B8365 0%, #6D5E47 100%);
+//     }
+//   }
+// }
+
+// .projects-grid {
+//   display: grid;
+//  // grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+//   grid-template-columns: repeat(3, 500px);
+//   gap: 2.5rem;
+//   max-width: 1600px;
+
+//   margin: 2rem auto;
+//   padding-bottom: 2rem;
+// }
+
+// .project-card {
+//   background: linear-gradient(180deg, #87CEEB 0%, #98D8E8 100%);
+//   border: 6px solid #5D4E37;
+//   border-radius: 4px;
+//   padding: 2rem;
+//   box-shadow: 
+//     0 0 0 3px #8B7355,
+//     0 8px 0 #3d3d3d,
+//     0 8px 20px rgba(0, 0, 0, 0.4);
+//   position: relative;
+//   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+//   &:hover {
+//     transform: translateY(-4px);
+//     box-shadow: 
+//       0 0 0 3px #8B7355,
+//       0 12px 0 #3d3d3d,
+//       0 12px 25px rgba(0, 0, 0, 0.5);
+//   }
+  
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: 12px;
+//     left: 12px;
+//     right: 12px;
+//     bottom: 12px;
+//     border: 2px dashed rgba(255, 255, 255, 0.3);
+//     pointer-events: none;
+//   }
+// }
+
+// .project-header {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin-bottom: 1.5rem;
+//   flex-wrap: wrap;
+//   gap: 1rem;
+// }
+
+// .project-title {
+//   font-size: 1.2rem;
+//   color: #2c3e50;
+//   text-shadow: 
+//     3px 3px 0 #fff,
+//     4px 4px 0 rgba(0, 0, 0, 0.2);
+//   letter-spacing: 1px;
+//   margin: 0;
+// }
+
+// .project-links {
+//   display: flex;
+//   gap: 0.75rem;
+// }
+
+// .pixel-button {
+//   background: linear-gradient(180deg, #4CAF50 0%, #45a049 100%);
+//   color: white;
+//   border: 4px solid #2d6b2f;
+//   border-radius: 4px;
+//   padding: 0.6rem 1.2rem;
+//   font-size: 0.65rem;
+//   font-weight: 700;
+//   cursor: pointer;
+//   transition: all 0.1s ease;
+//   box-shadow: 
+//     0 4px 0 #2d6b2f,
+//     0 6px 8px rgba(0, 0, 0, 0.3);
+//   font-family: 'Press Start 2P', 'Courier New', monospace;
+//   text-transform: uppercase;
+//   letter-spacing: 0.5px;
+//   text-decoration: none;
+//   display: inline-block;
+  
+//   &:hover {
+//     background: linear-gradient(180deg, #5cb860 0%, #4CAF50 100%);
+//     transform: translateY(-2px);
+//     box-shadow: 
+//       0 6px 0 #2d6b2f,
+//       0 8px 12px rgba(0, 0, 0, 0.3);
+//   }
+  
+//   &:active {
+//     transform: translateY(2px);
+//     box-shadow: 
+//       0 2px 0 #2d6b2f,
+//       0 4px 5px rgba(0, 0, 0, 0.3);
+//   }
+// }
+
+// .project-image {
+//   width: 100%;
+//   height: auto;
+//   border: 4px solid #5D4E37;
+//   border-radius: 2px;
+//   margin-bottom: 1.5rem;
+//   box-shadow: 
+//     0 4px 0 #3d3d3d,
+//     0 6px 10px rgba(0, 0, 0, 0.3);
+//   image-rendering: pixelated;
+// }
+
+// .tech-stack {
+//   margin-bottom: 1.5rem;
+// }
+
+// .section-title {
+//   font-size: 0.75rem;
+//   color: #34495e;
+//   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+//   margin-bottom: 0.75rem;
+//   letter-spacing: 0.5px;
+// }
+
+// .tech-tags {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 0.5rem;
+// }
+
+// .tech-tag {
+//   background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+//   border: 3px solid #333;
+//   border-radius: 2px;
+//   padding: 0.4rem 0.7rem;
+//   font-size: 0.5rem;
+//   color: #2c3e50;
+//   box-shadow: 
+//     0 0 0 1px #666,
+//     0 3px 0 #222,
+//     0 4px 6px rgba(0, 0, 0, 0.3),
+//     inset 0 1px 0 rgba(255, 255, 255, 0.5);
+//   text-shadow: 0.5px 0.5px 0 rgba(255, 255, 255, 0.8);
+//   letter-spacing: 0.3px;
+//   transition: all 0.1s ease;
+  
+//   &:hover {
+//     transform: translateY(-2px);
+//     box-shadow: 
+//       0 0 0 1px #666,
+//       0 5px 0 #222,
+//       0 6px 8px rgba(0, 0, 0, 0.3),
+//       inset 0 1px 0 rgba(255, 255, 255, 0.7);
+//   }
+// }
+
+// .project-description {
+//   font-size: 0.65rem;
+//   line-height: 1.8;
+//   color: #2c3e50;
+//   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+//   margin: 0;
+// }
+
+// // Responsive design
+// @media (max-width: 1200px) {
+//   .projects-grid {
+//     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .info-container {
+//     padding: 1rem;
+//   }
+  
+//   .projects-grid {
+//     grid-template-columns: 1fr;
+//     gap: 1.5rem;
+//   }
+  
+//   .project-card {
+//     padding: 1.5rem;
+//   }
+  
+//   .project-header {
+//     flex-direction: column;
+//     align-items: flex-start;
+//   }
+  
+//   .project-title {
+//     font-size: 0.9rem;
+//   }
+  
+//   .pixel-button {
+//     font-size: 0.55rem;
+//     padding: 0.5rem 1rem;
+//   }
+  
+//   .section-title {
+//     font-size: 0.65rem;
+//   }
+  
+//   .tech-tag {
+//     font-size: 0.45rem;
+//     padding: 0.35rem 0.6rem;
+//   }
+  
+//   .project-description {
+//     font-size: 0.55rem;
+//     line-height: 1.6;
+//   }
+// }
+
+// @media (max-width: 480px) {
+//   .project-title {
+//     font-size: 0.75rem;
+//   }
+  
+//   .pixel-button {
+//     font-size: 0.5rem;
+//     padding: 0.45rem 0.85rem;
+//   }
+  
+//   .tech-tag {
+//     font-size: 0.4rem;
+//   }
+  
+//   .project-description {
+//     font-size: 0.5rem;
+//   }
+// }
+
+
+// // search bar styles for the project page
+// .search-container {
+//   max-width: 1600px;
+//   margin: 0 auto 2rem;
+//   display: flex;
+//   justify-content: center;
+// }
+
+// // Search bar input
+// .search-input {
+//   width: 100%;
+//   max-width: 600px;
+//   background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+//   border: 5px solid #5D4E37;
+//   border-radius: 4px;
+//   padding: 1rem 1.5rem;
+//   font-size: 0.75rem;
+//   font-family: 'Press Start 2P', 'Courier New', monospace;
+//   color: #2c3e50;
+//   box-shadow: 
+//     0 0 0 2px #8B7355,
+//     0 5px 0 #3d3d3d,
+//     0 6px 15px rgba(0, 0, 0, 0.4),
+//     inset 0 2px 0 rgba(0, 0, 0, 0.1);
+//   transition: all 0.2s ease;
+//   text-shadow: 0.5px 0.5px 0 rgba(255, 255, 255, 0.8);
+//   letter-spacing: 0.5px;
+  
+//   &::placeholder {
+//     color: #7f8c8d;
+//     opacity: 0.7;
+//   }
+  
+//   &:focus {
+//     outline: none;
+//     background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
+//     border-color: #293829da;
+//     transform: translateY(-2px);
+//   }
+  
+//   &:active {
+//     transform: translateY(1px);
+//     box-shadow: 
+//       0 0 0 2px #8B7355,
+//       0 3px 0 #3d3d3d,
+//       0 4px 10px rgba(0, 0, 0, 0.4),
+//       inset 0 2px 0 rgba(0, 0, 0, 0.1);
+//   }
+// }
+
+// ============================================================
+// GLOBAL & FONTS
+// ============================================================
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  touch-action: manipulation; // prevent double-tap zoom on mobile
+}
+
+// ============================================================
+// WELCOME OVERLAY
+// ============================================================
 .welcome-overlay {
   position: fixed;
   top: 0;
@@ -14,6 +853,7 @@
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
+  padding: 1rem;
 }
 
 .welcome-modal {
@@ -22,7 +862,7 @@
   border-radius: 4px;
   padding: 3rem;
   max-width: 600px;
-  width: 90%;
+  width: 100%;
   box-shadow: 
     0 0 0 3px #8B7355,
     0 8px 0 #3d3d3d,
@@ -40,6 +880,16 @@
     bottom: 12px;
     border: 2px dashed rgba(255, 255, 255, 0.3);
     pointer-events: none;
+  }
+  
+  &::after {
+    content: '🌳 🏢 🌳';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.3));
   }
   
   h1 {
@@ -90,7 +940,6 @@
     font-family: 'Press Start 2P', 'Courier New', monospace;
     text-transform: uppercase;
     letter-spacing: 1px;
-    position: relative;
     
     &:hover {
       background: linear-gradient(180deg, #5cb860 0%, #4CAF50 100%);
@@ -109,61 +958,9 @@
   }
 }
 
-// Add pixel decorations
-.welcome-modal::after {
-  content: '🌳 🏢 🌳';
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.5rem;
-  filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.3));
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@media (max-width: 768px) {
-  .welcome-modal {
-    padding: 2rem 1.5rem;
-    
-    h1 {
-      font-size: 1.5rem;
-    }
-    
-    h2 {
-      font-size: 0.8rem;
-    }
-    
-    p {
-      font-size: 0.75rem;
-    }
-    
-    button {
-      font-size: 0.9rem;
-      padding: 0.8rem 2rem;
-    }
-  }
-}
-
-// Player Overlay Styles
+// ============================================================
+// PLAYER OVERLAY
+// ============================================================
 .player-overlay {
   position: fixed;
   top: 0;
@@ -174,7 +971,6 @@
   animation: fadeIn 0.3s ease-in;
   cursor: pointer;
   
-  // Blur everything
   &::before {
     content: '';
     position: absolute;
@@ -185,7 +981,6 @@
     backdrop-filter: blur(8px);
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
-    // Cut out a hole for the spotlight
     -webkit-mask-image: radial-gradient(
       circle 75px at 110px 530px,
       transparent 0%,
@@ -200,7 +995,6 @@
     );
   }
   
-  // Dark overlay with spotlight cutout
   &::after {
     content: '';
     position: absolute;
@@ -218,7 +1012,6 @@
     pointer-events: none;
   }
   
-  // Spotlight glow around player
   .spotlight {
     position: absolute;
     left: 110px;
@@ -238,8 +1031,8 @@
 
 .player-speech-bubble {
   position: absolute;
-  left: 210px; // Position to the right of player
-  top: 423px; // Slightly above player
+  left: 210px;
+  top: 423px;
   background: linear-gradient(180deg, #87CEEB 0%, #98D8E8 100%);
   border: 5px solid #5D4E37;
   border-radius: 8px;
@@ -255,7 +1048,6 @@
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
   
-  // Arrow pointing to player
   &::before {
     content: '';
     position: absolute;
@@ -299,77 +1091,111 @@
   }
 }
 
+// ============================================================
+// HAMBURGER MENU
+// ============================================================
+.pixel-hamburger-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2000;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
 
+.hamburger-button {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+  border: 4px solid #333;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  box-shadow: 
+    0 0 0 2px #666,
+    0 4px 0 #222,
+    0 6px 10px rgba(0, 0, 0, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.1s ease;
+  position: relative;
 
-@keyframes pulse {
-  0%, 100% {
+  &:hover {
+    background: linear-gradient(180deg, #fff 0%, #f0f0f0 100%);
+    transform: translateY(-2px);
     box-shadow: 
-      0 0 40px 10px rgba(255, 255, 0, 0.3),
-      0 0 60px 20px rgba(255, 255, 0, 0.2);
+      0 0 0 2px #888,
+      0 6px 0 #333,
+      0 8px 15px rgba(0, 0, 0, 0.5),
+      inset 0 2px 0 rgba(255, 255, 255, 0.7),
+      0 0 20px rgba(255, 255, 255, 0.3);
   }
-  50% {
+
+  &:active {
+    transform: translateY(2px);
     box-shadow: 
-      0 0 50px 15px rgba(255, 255, 0, 0.4),
-      0 0 70px 25px rgba(255, 255, 0, 0.3);
+      0 0 0 2px #666,
+      0 2px 0 #222,
+      0 4px 5px rgba(0, 0, 0, 0.5),
+      inset 0 2px 0 rgba(255, 255, 255, 0.3);
   }
 }
 
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.3) translateX(-20px);
-  }
-  50% {
-    transform: scale(1.05) translateX(0);
-  }
-  70% {
-    transform: scale(0.95) translateX(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateX(0);
+.hamburger-line {
+  width: 24px;
+  height: 4px;
+  background: #333;
+  border-radius: 0;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.menu-overlay {
+  margin-top: 12px;
+  background: linear-gradient(180deg, #87CEEB 0%, #98D8E8 100%);
+  border: 5px solid #5D4E37;
+  border-radius: 4px;
+  padding: 1.5rem;
+  min-width: 220px;
+  box-shadow: 
+    0 0 0 3px #8B7355,
+    0 6px 0 #3d3d3d,
+    0 8px 15px rgba(0, 0, 0, 0.5);
+  animation: menuSlideIn 0.3s ease-out;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    pointer-events: none;
   }
 }
 
-@media (max-width: 768px) {
-  .welcome-modal {
-    padding: 2rem 1.5rem;
-    
-    h1 {
-      font-size: 1.5rem;
-    }
-    
-    h2 {
-      font-size: 0.8rem;
-    }
-    
-    p {
-      font-size: 0.75rem;
-    }
-    
-    button {
-      font-size: 0.9rem;
-      padding: 0.8rem 2rem;
-    }
-  }
-  
-  .player-speech-bubble {
-    left: 50%;
-    top: 100px;
-    transform: translateX(-50%);
-    max-width: 85%;
-    
-    &::before,
-    &::after {
-      left: 50%;
-      top: auto;
-      bottom: -20px;
-      transform: translateX(-50%) rotate(90deg);
-    }
-  }
+.menu-text {
+  margin: 0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #2c3e50;
+  text-shadow: 
+    1px 1px 0 rgba(255, 255, 255, 0.8),
+    2px 2px 0 rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
+  line-height: 1.6;
+  text-align: center;
 }
 
-// styles for the builiding labels
+// ============================================================
+// PROJECT LABELS (game map floating labels)
+// ============================================================
 .project-label {
   font-family: 'Press Start 2P', 'Courier New', monospace;
   image-rendering: pixelated;
@@ -431,84 +1257,78 @@
   filter: drop-shadow(1px 1px 0 rgba(255, 255, 255, 0.8));
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
+// ============================================================
+// MOBILE ARROW CONTROLS (virtual D-pad for game)
+// ============================================================
+.mobile-controls {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1500;
+  display: none; // hidden on desktop, shown via media query
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  touch-action: none;
 }
 
-@keyframes pulse-border {
-  0%, 100% {
+.mobile-controls-row {
+  display: flex;
+  gap: 4px;
+}
+
+.dpad-btn {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(220,220,220,0.9) 100%);
+  border: 3px solid #333;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  box-shadow: 
+    0 0 0 1px #666,
+    0 4px 0 #222,
+    0 5px 8px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  transition: all 0.08s ease;
+  -webkit-tap-highlight-color: transparent;
+
+  &:active {
+    transform: translateY(3px);
     box-shadow: 
-      0 0 0 2px #666,
-      0 4px 0 #222,
-      0 6px 10px rgba(0, 0, 0, 0.5),
-      inset 0 2px 0 rgba(255, 255, 255, 0.5);
-  }
-  50% {
-    box-shadow: 
-      0 0 0 2px #888,
-      0 4px 0 #333,
-      0 6px 10px rgba(0, 0, 0, 0.5),
-      inset 0 2px 0 rgba(255, 255, 255, 0.7),
-      0 0 20px rgba(255, 255, 255, 0.3);
+      0 0 0 1px #666,
+      0 1px 0 #222,
+      0 2px 4px rgba(0,0,0,0.4),
+      inset 0 1px 0 rgba(255,255,255,0.3);
   }
 }
 
-@keyframes bounce-arrow {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(4px);
-  }
+.dpad-center {
+  width: 52px;
+  height: 52px;
+  background: transparent;
+  // empty centre of d-pad cross
 }
 
-@media (max-width: 768px) {
-  .label-title {
-    font-size: 0.5rem;
-  }
-  
-  .label-description {
-    font-size: 0.35rem;
-    max-width: 150px;
-  }
-  
-  .label-arrow {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 1710px) {
-  .label-title {
-    font-size: 0.5rem;
-  }
-  
-  .label-description {
-    font-size: 0.35rem;
-    max-width: 215px;
-  }
-  
-  .label-arrow {
-    font-size: 1rem;
-  }
-}
-
-// //  styles for the boboclart information page 
+// ============================================================
+// INFO PAGE — CONTAINER
+// ============================================================
 .info-container {
   width: 100%;
   height: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 2rem;
   font-family: 'Press Start 2P', 'Courier New', monospace;
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
   
-  // Custom scrollbar
   &::-webkit-scrollbar {
     width: 16px;
   }
@@ -528,13 +1348,66 @@
   }
 }
 
+// ============================================================
+// SEARCH BAR
+// ============================================================
+.search-container {
+  max-width: 1600px;
+  margin: 0 auto 2rem;
+  display: flex;
+  justify-content: center;
+  padding: 0 0.5rem;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 600px;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+  border: 5px solid #5D4E37;
+  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  font-size: 0.75rem;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  color: #2c3e50;
+  box-shadow: 
+    0 0 0 2px #8B7355,
+    0 5px 0 #3d3d3d,
+    0 6px 15px rgba(0, 0, 0, 0.4),
+    inset 0 2px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  text-shadow: 0.5px 0.5px 0 rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.5px;
+  
+  &::placeholder {
+    color: #7f8c8d;
+    opacity: 0.7;
+  }
+  
+  &:focus {
+    outline: none;
+    background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
+    border-color: #293829da;
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 
+      0 0 0 2px #8B7355,
+      0 3px 0 #3d3d3d,
+      0 4px 10px rgba(0, 0, 0, 0.4),
+      inset 0 2px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+// ============================================================
+// PROJECTS GRID & CARDS
+// ============================================================
 .projects-grid {
   display: grid;
- // grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   grid-template-columns: repeat(3, 500px);
   gap: 2.5rem;
   max-width: 1600px;
-
   margin: 2rem auto;
   padding-bottom: 2rem;
 }
@@ -593,6 +1466,7 @@
 .project-links {
   display: flex;
   gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .pixel-button {
@@ -694,122 +1568,224 @@
   margin: 0;
 }
 
-// Responsive design
+// ============================================================
+// KEYFRAME ANIMATIONS
+// ============================================================
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes menuSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-border {
+  0%, 100% {
+    box-shadow: 
+      0 0 0 2px #666,
+      0 4px 0 #222,
+      0 6px 10px rgba(0, 0, 0, 0.5),
+      inset 0 2px 0 rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 
+      0 0 0 2px #888,
+      0 4px 0 #333,
+      0 6px 10px rgba(0, 0, 0, 0.5),
+      inset 0 2px 0 rgba(255, 255, 255, 0.7),
+      0 0 20px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(4px); }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 40px 10px rgba(255, 255, 0, 0.3),
+      0 0 60px 20px rgba(255, 255, 0, 0.2);
+  }
+  50% {
+    box-shadow: 
+      0 0 50px 15px rgba(255, 255, 0, 0.4),
+      0 0 70px 25px rgba(255, 255, 0, 0.3);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateX(-20px);
+  }
+  50% { transform: scale(1.05) translateX(0); }
+  70% { transform: scale(0.95) translateX(0); }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+// ============================================================
+// RESPONSIVE — 1710px (monitor → large laptop)
+// ============================================================
+@media (max-width: 1710px) {
+  .label-title { font-size: 0.5rem; }
+  .label-description { font-size: 0.35rem; max-width: 215px; }
+  .label-arrow { font-size: 1rem; }
+}
+
+// ============================================================
+// RESPONSIVE — 1200px
+// ============================================================
 @media (max-width: 1200px) {
   .projects-grid {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
 }
 
+// ============================================================
+// RESPONSIVE — 768px (tablet)
+// ============================================================
 @media (max-width: 768px) {
-  .info-container {
-    padding: 1rem;
+
+  // Welcome modal
+  .welcome-modal {
+    padding: 2rem 1.5rem;
+    
+    h1 { font-size: 1rem; }
+    h2 { font-size: 0.7rem; }
+    p { font-size: 0.65rem; }
+    button { font-size: 0.8rem; padding: 0.8rem 2rem; }
   }
+
+  // Player overlay — speech bubble flips below player on small screens
+  .player-speech-bubble {
+    left: 50%;
+    top: 100px;
+    transform: translateX(-50%);
+    max-width: 85%;
+    
+    &::before,
+    &::after {
+      left: 50%;
+      top: auto;
+      bottom: -20px;
+      transform: translateX(-50%) rotate(90deg);
+    }
+  }
+
+  // Hamburger
+  .hamburger-button { width: 40px; height: 40px; }
+  .hamburger-line { width: 20px; height: 3px; }
+  .menu-overlay { padding: 1rem; min-width: 180px; }
+  .menu-text { font-size: 0.5rem; }
+
+  // Labels
+  .label-title { font-size: 0.5rem; }
+  .label-description { font-size: 0.35rem; max-width: 150px; }
+  .label-arrow { font-size: 1rem; }
+
+  // Show mobile d-pad
+  .mobile-controls { display: flex; }
+
+  // Info page
+  .info-container { padding: 1rem; }
   
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   
-  .project-card {
-    padding: 1.5rem;
-  }
+  .project-card { padding: 1.5rem; }
   
   .project-header {
     flex-direction: column;
     align-items: flex-start;
   }
   
-  .project-title {
-    font-size: 0.9rem;
-  }
-  
-  .pixel-button {
-    font-size: 0.55rem;
-    padding: 0.5rem 1rem;
-  }
-  
-  .section-title {
-    font-size: 0.65rem;
-  }
-  
-  .tech-tag {
-    font-size: 0.45rem;
-    padding: 0.35rem 0.6rem;
-  }
-  
-  .project-description {
-    font-size: 0.55rem;
-    line-height: 1.6;
-  }
+  .project-title { font-size: 0.9rem; }
+  .pixel-button { font-size: 0.55rem; padding: 0.5rem 1rem; }
+  .section-title { font-size: 0.65rem; }
+  .tech-tag { font-size: 0.45rem; padding: 0.35rem 0.6rem; }
+  .project-description { font-size: 0.55rem; line-height: 1.6; }
+  .search-input { font-size: 0.6rem; padding: 0.75rem 1rem; }
 }
 
+// ============================================================
+// RESPONSIVE — 480px (phone)
+// ============================================================
 @media (max-width: 480px) {
-  .project-title {
-    font-size: 0.75rem;
+
+  .welcome-modal {
+    padding: 1.5rem 1rem;
+    border-width: 4px;
+
+    h1 { font-size: 0.85rem; letter-spacing: 1px; }
+    h2 { font-size: 0.6rem; }
+    p { font-size: 0.55rem; }
+    button { font-size: 0.7rem; padding: 0.7rem 1.5rem; }
   }
-  
-  .pixel-button {
-    font-size: 0.5rem;
-    padding: 0.45rem 0.85rem;
+
+  .pixel-hamburger-container {
+    top: 12px;
+    left: 12px;
   }
-  
-  .tech-tag {
-    font-size: 0.4rem;
-  }
-  
-  .project-description {
-    font-size: 0.5rem;
-  }
+
+  .hamburger-button { width: 36px; height: 36px; }
+  .hamburger-line { width: 18px; height: 3px; }
+  .menu-text { font-size: 0.45rem; }
+  .menu-overlay { min-width: 160px; padding: 0.75rem; }
+
+  .project-title { font-size: 0.75rem; }
+  .pixel-button { font-size: 0.5rem; padding: 0.45rem 0.85rem; }
+  .tech-tag { font-size: 0.4rem; }
+  .project-description { font-size: 0.5rem; }
+
+  // Larger d-pad for small phones
+  .dpad-btn { width: 56px; height: 56px; font-size: 1.6rem; }
 }
 
+// ============================================================
+// RESPONSIVE — 375px (small phone / SE)
+// ============================================================
+@media (max-width: 375px) {
 
-// search bar styles for the project page
-.search-container {
-  max-width: 1600px;
-  margin: 0 auto 2rem;
-  display: flex;
-  justify-content: center;
-}
+  .welcome-modal {
+    h1 { font-size: 0.75rem; }
+    h2 { font-size: 0.55rem; }
+    p { font-size: 0.5rem; }
+  }
 
-// Search bar input
-.search-input {
-  width: 100%;
-  max-width: 600px;
-  background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
-  border: 5px solid #5D4E37;
-  border-radius: 4px;
-  padding: 1rem 1.5rem;
-  font-size: 0.75rem;
-  font-family: 'Press Start 2P', 'Courier New', monospace;
-  color: #2c3e50;
-  box-shadow: 
-    0 0 0 2px #8B7355,
-    0 5px 0 #3d3d3d,
-    0 6px 15px rgba(0, 0, 0, 0.4),
-    inset 0 2px 0 rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease;
-  text-shadow: 0.5px 0.5px 0 rgba(255, 255, 255, 0.8);
-  letter-spacing: 0.5px;
-  
-  &::placeholder {
-    color: #7f8c8d;
-    opacity: 0.7;
-  }
-  
-  &:focus {
-    outline: none;
-    background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
-    border-color: #293829da;
-    transform: translateY(-2px);
-  }
-  
-  &:active {
-    transform: translateY(1px);
-    box-shadow: 
-      0 0 0 2px #8B7355,
-      0 3px 0 #3d3d3d,
-      0 4px 10px rgba(0, 0, 0, 0.4),
-      inset 0 2px 0 rgba(0, 0, 0, 0.1);
-  }
+  .project-title { font-size: 0.65rem; }
+  .section-title { font-size: 0.55rem; }
+  .project-description { font-size: 0.45rem; }
+
+  .dpad-btn { width: 60px; height: 60px; font-size: 1.8rem; }
 }

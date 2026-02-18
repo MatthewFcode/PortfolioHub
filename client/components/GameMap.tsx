@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router'
 import useZoneBreakPoints from './Zones.tsx'
 import map from '../../src/assets/images/portfolio.gif'
 import PlayerSprite from './Sprite.tsx'
+import MobileControls from './MobileControls.tsx'
 
 function GameMap() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -72,7 +73,7 @@ function GameMap() {
             top: z.y,
             width: z.width,
             height: z.height,
-            //border: '2px dashed red',
+            border: '2px dashed red',
             pointerEvents: 'none',
           }}
         />
@@ -82,6 +83,7 @@ function GameMap() {
         setPosition={setPosition}
         containerRef={containerRef}
       />
+      <MobileControls onDirection={() => {}} />
     </div>
   )
 }
