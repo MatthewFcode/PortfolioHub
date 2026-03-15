@@ -155,8 +155,8 @@ export default function HamburgerMenu() {
         {isOpen && (
           <>
             <div className="menu-overlay">
-              <Link to="/">
-                <p className="menu-text">Go to home</p>
+              <Link to="/projects">
+                <p className="menu-text">Go to projects</p>
               </Link>
             </div>
             <div className="menu-overlay">

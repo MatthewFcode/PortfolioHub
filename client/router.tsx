@@ -6,11 +6,20 @@ import {
 import Info from './components/Info.tsx'
 import App from './components/App'
 import RouteWrapper from './components/RouteWrapper.tsx'
+import Matthew from './components/Matthew.tsx'
 
 const routes = createRoutesFromElements(
   <>
     <Route
       path="/"
+      element={
+        <RouteWrapper>
+          <Matthew />
+        </RouteWrapper>
+      }
+    />
+    <Route
+      path="/projects"
       element={
         <RouteWrapper>
           <Info />
