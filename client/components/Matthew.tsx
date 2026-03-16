@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import background from '../../src/assets/images/portfolio-me.gif'
 import HamburgerInfo from './HamburgerHome.tsx'
+import MatthewContent from './MatthewContent.tsx'
 
 function Matthew() {
   const containerRef = useRef<HTMLDivElement>(null) // stores anaimtions and data that shouldnt trigger re renders
@@ -18,6 +19,7 @@ function Matthew() {
       }}
     >
       {' '}
+      <MatthewContent />
       <HamburgerInfo />
     </div>
   )
