@@ -15,6 +15,7 @@ function Matthew() {
         backgroundImage: `url(${background})`,
         backgroundSize: 'cover', // cover entire area
         backgroundPosition: 'center',
+        backgroundAttachment: 'scroll',
         overflow: 'hidden',
       }}
     >

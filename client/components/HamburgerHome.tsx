@@ -3,8 +3,12 @@ import { Link } from 'react-router'
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false)
+  const [showHint, setShowHint] = useState(true)
 
-  const toggleMenu = () => setIsOpen(!isOpen)
+  const toggleMenu = () => {
+    setIsOpen(!isOpen)
+    if (showHint) setShowHint(false)
+  }
 
   return (
     <>
@@ -110,6 +114,40 @@ export default function HamburgerMenu() {
           text-align: center;
         }
 
+        .pointing-hint {
+          position: absolute;
+          left: 65px;
+          top: 50%;
+          transform: translateY(-50%);
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          pointer-events: none;
+          white-space: nowrap;
+          animation: hintFloat 1.5s ease-in-out infinite;
+          z-index: 2001;
+        }
+
+        .hint-finger {
+          font-size: 24px;
+          filter: drop-shadow(2px 2px 0 #000);
+        }
+
+        .hint-text {
+          font-size: 10px;
+          color: #fff;
+          text-shadow: 2px 2px 0 #000;
+          background: rgba(0, 0, 0, 0.4);
+          padding: 6px 10px;
+          border-radius: 4px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes hintFloat {
+          0%, 100% { transform: translate(0, -50%); }
+          50% { transform: translate(10px, -50%); }
+        }
+
         @keyframes menuSlideIn {
           from {
             opacity: 0;
@@ -140,6 +178,33 @@ export default function HamburgerMenu() {
           .menu-text {
             font-size: 0.5rem;
           }
+
+          .pointing-hint {
+            left: 55px;
+            gap: 8px;
+          }
+
+          .hint-text {
+            font-size: 8px;
+            padding: 4px 8px;
+            max-width: 150px;
+            white-space: normal;
+            line-height: 1.4;
+          }
+
+          .hint-finger {
+            font-size: 20px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .pointing-hint {
+            left: 50px;
+          }
+          .hint-text {
+            max-width: 120px;
+            font-size: 7px;
+          }
         }
       `}</style>
 
@@ -149,6 +214,13 @@ export default function HamburgerMenu() {
           <span className="hamburger-line"></span>
           <span className="hamburger-line"></span>
           <span className="hamburger-line"></span>
+
+          {showHint && !isOpen && (
+            <div className="pointing-hint">
+              <span className="hint-finger">👈</span>
+              <span className="hint-text">click for personal projects and more</span>
+            </div>
+          )}
         </div>
 
         {/* Menu Overlay */}
