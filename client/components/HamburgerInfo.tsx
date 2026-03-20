@@ -159,11 +159,11 @@ export default function HamburgerMenu() {
                 <p className="menu-text">Go to home</p>
               </Link>
             </div>
-            <div className="menu-overlay">
+            {/* <div className="menu-overlay">
               <Link to="/game">
                 <p className="menu-text">Go to game mode</p>
               </Link>
-            </div>
+            </div> */}
           </>
         )}
       </div>

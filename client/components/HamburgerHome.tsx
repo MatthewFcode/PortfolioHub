@@ -218,7 +218,9 @@ export default function HamburgerMenu() {
           {showHint && !isOpen && (
             <div className="pointing-hint">
               <span className="hint-finger">👈</span>
-              <span className="hint-text">click for personal projects and more</span>
+              <span className="hint-text">
+                click for personal projects and more
+              </span>
             </div>
           )}
         </div>
@@ -231,11 +233,11 @@ export default function HamburgerMenu() {
                 <p className="menu-text">Go to projects</p>
               </Link>
             </div>
-            <div className="menu-overlay">
+            {/* <div className="menu-overlay">
               <Link to="/game">
                 <p className="menu-text">Go to game mode</p>
               </Link>
-            </div>
+            </div> */}
           </>
         )}
       </div>

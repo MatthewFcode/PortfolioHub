@@ -4,7 +4,7 @@ import {
   Route,
 } from 'react-router'
 import Info from './components/Info.tsx'
-import App from './components/App'
+//import App from './components/App'
 import RouteWrapper from './components/RouteWrapper.tsx'
 import Matthew from './components/Matthew.tsx'
 
@@ -26,14 +26,14 @@ const routes = createRoutesFromElements(
         </RouteWrapper>
       }
     />
-    <Route
+    {/* <Route
       path="/game"
       element={
         <RouteWrapper>
           <App />
         </RouteWrapper>
-      }
-    />
+      } 
+    /> */}
   </>,
 )
 
