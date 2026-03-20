@@ -1,18 +1,28 @@
 import { useState, useEffect } from 'react'
 import MatthewProfile1 from '../../src/assets/images/Matthew-Prof1.jpg'
 import MatthewProfile2 from '../../src/assets/images/Matthew-prof.jpg'
+import MatthewProfile3 from '../../src/assets/images/greem-matt.jpg'
 import { useForm, ValidationError } from '@formspree/react'
 
 function MatthewContent() {
-  const [image, setImage] = useState(MatthewProfile1)
+  // const [image, setImage] = useState(MatthewProfile1)
+  const images = [MatthewProfile1, MatthewProfile2, MatthewProfile3]
+  const [index, setIndex] = useState(0)
   const [state, handleSubmit] = useForm('mwvrrvob')
 
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setImage((prev) =>
+  //       prev === MatthewProfile1 ? MatthewProfile2 : MatthewProfile1,
+  //     )
+  //   }, 5000)
+  //   return () => clearInterval(interval)
+  // }, [])
   useEffect(() => {
     const interval = setInterval(() => {
-      setImage((prev) =>
-        prev === MatthewProfile1 ? MatthewProfile2 : MatthewProfile1,
-      )
+      setIndex((prev) => (prev + 1) % images.length)
     }, 5000)
+
     return () => clearInterval(interval)
   }, [])
 
@@ -40,7 +50,7 @@ function MatthewContent() {
         <div className="about-col about-col--left">
           <div className="about-photo-panel">
             <img
-              src={image}
+              src={images[index]}
               alt="Matthew profile"
               className="about-profile-img"
             />
