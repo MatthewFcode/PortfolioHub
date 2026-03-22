@@ -167,6 +167,8 @@ function MatthewContent() {
               <a
                 href="https://github.com/MatthewFcode"
                 className="about-contact-row"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <span className="about-contact-icon">
                   <img src={githubLogo} alt="github" />
