@@ -1168,10 +1168,12 @@ html, body {
 
 // ── COL 3 — Contact panel ────────────────────────────────────
 .about-contact-panel {
+
   @extend %pixel-panel;
 }
 
 .about-contact-links {
+  margin-top:1rem;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -1329,6 +1331,13 @@ html, body {
     opacity: 0.5;
     cursor: not-allowed;
   }
+}
+.about-contact-icon img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  display: block;
+  image-rendering: auto;
 }
 
 // ── Success message ───────────────────────────────────────────

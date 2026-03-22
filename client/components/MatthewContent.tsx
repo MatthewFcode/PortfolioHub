@@ -3,6 +3,8 @@ import MatthewProfile1 from '../../src/assets/images/Matthew-Prof1.jpg'
 import MatthewProfile2 from '../../src/assets/images/Matthew-prof.jpg'
 import MatthewProfile3 from '../../src/assets/images/greem-matt.jpg'
 import { useForm, ValidationError } from '@formspree/react'
+import githubLogo from '../../src/assets/images/github.png'
+import linkedinLogo from '../../src/assets/images/linkedbeh.webp'
 
 function MatthewContent() {
   // const [image, setImage] = useState(MatthewProfile1)
@@ -100,44 +102,6 @@ function MatthewContent() {
           <div className="about-contact-panel">
             <h2 className="about-panel-title">Reach Out ❗❗</h2>
 
-            <div className="about-contact-links">
-              <a
-                href="mailto:matthewfoley333@gmail.com"
-                className="about-contact-row"
-              >
-                <span className="about-contact-icon">✉️</span>
-                <span className="about-contact-info">
-                  <span className="about-contact-label">Email</span>
-                  <span className="about-contact-value">
-                    matthewfoley333@gmail.com
-                  </span>
-                </span>
-              </a>
-
-              <a href="tel:+64225642739" className="about-contact-row">
-                <span className="about-contact-icon">📞</span>
-                <span className="about-contact-info">
-                  <span className="about-contact-label">Phone</span>
-                  <span className="about-contact-value">022 564 2739</span>
-                </span>
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/matthew-foley-96b02a256/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="about-contact-row"
-              >
-                <span className="about-contact-icon">🔗</span>
-                <span className="about-contact-info">
-                  <span className="about-contact-label">LinkedIn</span>
-                  <span className="about-contact-value">
-                    Connect on LinkedIn
-                  </span>
-                </span>
-              </a>
-            </div>
-
             {state.succeeded ? (
               <div className="about-success">
                 <p>✅ Message sent!</p>
@@ -186,6 +150,47 @@ function MatthewContent() {
                 </button>
               </form>
             )}
+            <div className="about-contact-links">
+              <a
+                href="mailto:matthewfoley333@gmail.com"
+                className="about-contact-row"
+              >
+                <span className="about-contact-icon">✉️</span>
+                <span className="about-contact-info">
+                  <span className="about-contact-label">Email</span>
+                  <span className="about-contact-value">
+                    matthewfoley333@gmail.com
+                  </span>
+                </span>
+              </a>
+
+              <a href="" className="about-contact-row">
+                <span className="about-contact-icon">
+                  <img src={githubLogo} alt="github" />
+                </span>
+                <span className="about-contact-info">
+                  <span className="about-contact-label">GitHub</span>
+                  <span className="about-contact-value">Personal GitHub</span>
+                </span>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/matthew-foley-96b02a256/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="about-contact-row"
+              >
+                <span className="about-contact-icon">
+                  <img src={linkedinLogo} alt="LinkedIn" />
+                </span>
+                <span className="about-contact-info">
+                  <span className="about-contact-label">LinkedIn</span>
+                  <span className="about-contact-value">
+                    Connect on LinkedIn
+                  </span>
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
