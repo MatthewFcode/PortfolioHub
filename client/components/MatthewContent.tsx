@@ -164,7 +164,10 @@ function MatthewContent() {
                 </span>
               </a>
 
-              <a href="" className="about-contact-row">
+              <a
+                href="https://github.com/MatthewFcode"
+                className="about-contact-row"
+              >
                 <span className="about-contact-icon">
                   <img src={githubLogo} alt="github" />
                 </span>
