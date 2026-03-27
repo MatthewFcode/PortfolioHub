@@ -110,7 +110,7 @@ function MatthewContent() {
             ) : (
               <form onSubmit={handleSubmit} className="about-form">
                 <div className="about-form-group">
-                  <label htmlFor="about-email">Email Address</label>
+                  <label htmlFor="about-email">Your Email Address:</label>
                   <input
                     id="about-email"
                     type="email"
@@ -126,7 +126,7 @@ function MatthewContent() {
                 </div>
 
                 <div className="about-form-group">
-                  <label htmlFor="about-message">Message</label>
+                  <label htmlFor="about-message">Your Message:</label>
                   <textarea
                     id="about-message"
                     name="message"
