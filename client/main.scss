@@ -1431,3 +1431,145 @@ html, body {
   .about-panel-title  { font-size: 0.55rem; }
   .about-bio-text     { font-size: 0.5rem; }
 }
+
+// ============================================================
+// ALFREDO — AI chat widget inside .about-education-panel
+// ============================================================
+
+.alfredo-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+}
+
+.alfredo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.alfredo-input-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.alfredo-input {
+  flex: 1;
+  background: linear-gradient(180deg, #fff 0%, #f9f9f9 100%);
+  border: 4px solid #5D4E37;
+  border-radius: 2px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.5rem;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  color: #2c3e50;
+  box-shadow:
+    0 0 0 2px #8B7355,
+    0 3px 0 #3d3d3d,
+    inset 0 2px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.15s ease;
+
+  &::placeholder { color: #aaa; }
+
+  &:focus {
+    outline: none;
+    border-color: #2c3e50;
+    transform: translateY(-1px);
+    box-shadow:
+      0 0 0 2px #8B7355,
+      0 5px 0 #3d3d3d,
+      inset 0 2px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  &:disabled { opacity: 0.6; cursor: not-allowed; }
+}
+
+// Narrower submit — just the arrow icon
+.alfredo-submit {
+  padding: 0.65rem 1rem;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+// Area that holds either the Lottie or the reply
+.alfredo-response-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 120px;
+}
+
+.alfredo-lottie-wrap {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Reply box — same card feel as .about-contact-row
+.alfredo-reply-box {
+  background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+  border: 3px solid #333;
+  border-radius: 2px;
+  padding: 0.85rem 1rem;
+  box-shadow:
+    0 0 0 1px #666,
+    0 3px 0 #222,
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  animation: slideUp 0.4s ease-out;
+}
+
+.alfredo-reply-text {
+  font-size: 0.5rem;
+  line-height: 1.9;
+  color: #2c3e50;
+  text-shadow: 0.5px 0.5px 0 rgba(255, 255, 255, 0.6);
+  margin: 0;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+}
+
+// Audio button — matches .pixel-button but smaller
+.alfredo-audio-btn {
+  align-self: flex-start;
+  background: linear-gradient(180deg, #4CAF50 0%, #45a049 100%);
+  color: #fff;
+  border: 3px solid #2d6b2f;
+  border-radius: 4px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.45rem;
+  font-weight: 700;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow:
+    0 3px 0 #2d6b2f,
+    0 5px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.1s ease;
+
+  &:hover {
+    background: linear-gradient(180deg, #5cb860 0%, #4CAF50 100%);
+    transform: translateY(-2px);
+    box-shadow:
+      0 5px 0 #2d6b2f,
+      0 7px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: translateY(2px);
+    box-shadow:
+      0 1px 0 #2d6b2f,
+      0 3px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (max-width: 768px) {
+  .alfredo-input    { font-size: 0.45rem; }
+  .alfredo-reply-text { font-size: 0.45rem; }
+  .alfredo-audio-btn  { font-size: 0.4rem; }
+}

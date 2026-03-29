@@ -1,5 +1,6 @@
 import asyncio #running functions concurrently
 import os # built in python module that lets us talk to the operating system
+import time
 from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -54,22 +55,22 @@ async def alfredo(user_prompt: str) -> str:
         input=user_prompt
     )
 
-    rag_start_latency = time.time()
+    # rag_start_latency = time.time()
 
-    context, similarities = retrieve_context(user_prompt)
+    # context, similarities = retrieve_context(user_prompt)
 
     
-    rag_latency = int((time.time() - rag_start_latency) * 1000)  # ms
-    trace.span(
-        name="rag_retrieval", 
-        input=user_prompt,
-        output=context,
-         metadata={
-            "similarities": similarities,
-            "latency_ms": rag_latency,
-        }
+    # rag_latency = int((time.time() - rag_start_latency) * 1000)  # ms
+    # trace.span(
+    #     name="rag_retrieval", 
+    #     input=user_prompt,
+    #     output=context,
+    #      metadata={
+    #         "similarities": similarities,
+    #         "latency_ms": rag_latency,
+    #     }
 
-    )
+    # )
     messages = [
         SystemMessage(content=f"""
                       Matthew is a Full Stack AI Engineer/Developer
@@ -77,7 +78,7 @@ async def alfredo(user_prompt: str) -> str:
                       Your role is to answer questions about Matthew from people who are visiting the site and nothing else. 
                       Keep Responses under 50 words.
 
-                      RAG context about Matthew {context}
+                      RAG context about Matthew 
 """),  HumanMessage(content=user_prompt),
     ]
     llm_start = time.time()
