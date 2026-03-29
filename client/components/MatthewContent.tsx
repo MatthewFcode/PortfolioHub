@@ -5,6 +5,7 @@ import MatthewProfile3 from '../../src/assets/images/greem-matt.jpg'
 import { useForm, ValidationError } from '@formspree/react'
 import githubLogo from '../../src/assets/images/github.png'
 import linkedinLogo from '../../src/assets/images/linkedbeh.webp'
+import Alfredo from './MatthewContentAlfredo'
 
 function MatthewContent() {
   // const [image, setImage] = useState(MatthewProfile1)
@@ -91,10 +92,9 @@ function MatthewContent() {
           </div>
 
           {/* Education placeholder — bottom of col 2 */}
-          {/* <div className="about-education-panel">
-            <h3 className="about-panel-title">🎓 Education</h3>
-            <p className="about-placeholder-text">Coming soon…</p>
-          </div> */}
+          <div className="about-education-panel">
+            <Alfredo />
+          </div>
         </div>
 
         {/* COL 3 — Reach Out */}
