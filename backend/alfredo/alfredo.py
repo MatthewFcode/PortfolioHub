@@ -47,7 +47,7 @@ def retrieve_context(query: str) -> str:
     if not chunks:
         return "No relevant info found."
     
-def alfredo(user_prompt: str) -> str:
+async def alfredo(user_prompt: str) -> str:
     #start the langfuse trace 
     trace = langfuse.trace(
         name="alfredo",
@@ -78,25 +78,30 @@ def alfredo(user_prompt: str) -> str:
                       Keep Responses under 50 words.
 
                       RAG context about Matthew {context}
-""")
+"""),  HumanMessage(content=user_prompt),
     ]
     llm_start = time.time()
+    full_response = ""
+
+    async for chunk in model.astream(messages): 
+        if chunk.content:
+            token = chunk.content
+            full_response += token
+            yield token
 
     response = model.invoke(messages)
-
-    reply = response.content
 
     llm_latency = int((time.time() - llm_start) * 1000)
 
     trace.update(
         name="alfredo",
-        output=reply,
+        output=full_response,
         metaddata={"latency_ms": llm_latency}
     )
 
     langfuse.flush() # makes sure that langfuse send sthe data before the function exits
 
-    return reply
+
 
 
 if __name__ == "__main__": # this is the built in name thing from python saying dont run this file unless I call it init 

@@ -1,5 +1,7 @@
 from fastapi import FastAPI
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel # class from pydantic that validates data and parses JSON into python objects 
+from alfredo import alfredo
 
 app = FastAPI()
 
@@ -12,7 +14,8 @@ class AlfredoRequest(BaseModel):
 
 @app.post("/api/alfredo") # can read data through the path paramters or the request body
 async def alfredo_post_function(data: AlfredoRequest): # validates that data is in that shape 
-    return {
-        "prompt": data.prompt
-    }
+    return StreamingResponse(  #FastAPI module for streaming back to the client 
+        alfredo(data.prompt),
+        media_type="text/plain" # expect a stream of plain text
+    )
     
