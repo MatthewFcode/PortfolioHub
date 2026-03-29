@@ -51,6 +51,7 @@
   },
   "browserslist": "> 2%, not dead",
   "dependencies": {
-    "@formspree/react": "^3.0.0"
+    "@formspree/react": "^3.0.0",
+    "lottie-react": "^2.4.1"
   }
 }

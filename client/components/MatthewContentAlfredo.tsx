@@ -1,8 +1,12 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import Lottie, { LottieRefCurrentProps } from 'lottie-react'
+import AlfredoAnimation from '../../src/animations/chatbot.json'
 
 function Alfredo() {
   const [promptState, setPromptState] = useState('')
   const [reply, setReply] = useState('')
+
+  const lottieRef = useRef<LottieRefCurrentProps | null>(null)
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -47,6 +51,12 @@ function Alfredo() {
         </form>
       </div>
       <div>
+        <Lottie
+          lottieRef={lottieRef}
+          animationData={AlfredoAnimation}
+          loop
+          autoplay={false}
+        />
         <p>{reply}</p>
       </div>
     </>
