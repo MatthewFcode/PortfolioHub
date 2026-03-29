@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
 from sentence_transformers import SentenceTransformer
+from langfuse import Langfuse 
 
 load_dotenv() # loads all the current env vars into the os environ
 
@@ -19,6 +20,14 @@ model = ChatGoogleGenerativeAI(
   temperature=0.7,
   api_key=os.environ["GOOGLE_API_KEY"]
 )
+
+#langfuse client 
+langfuse = Langfuse (
+    public_key=os.environ["LANGFUSE_PUBLIC_KEY"],
+    secret_key=os.environ["LANGFUSE_SECRET_KEY"],
+    host=os.environ["LANGFUSE_BASE_URL"],
+)
+
 
 def embed_query(text: str) -> list[float]:
     return embed_model.encode(f"Represent this sentence: {text}").tolist()
@@ -39,8 +48,28 @@ def retrieve_context(query: str) -> str:
         return "No relevant info found."
     
 def alfredo(user_prompt: str) -> str:
-    context = retrieve_context(user_prompt)
+    #start the langfuse trace 
+    trace = langfuse.trace(
+        name="alfredo",
+        input=user_prompt
+    )
 
+    rag_start_latency = time.time()
+
+    context, similarities = retrieve_context(user_prompt)
+
+    
+    rag_latency = int((time.time() - rag_start_latency) * 1000)  # ms
+    trace.span(
+        name="rag_retrieval", 
+        input=user_prompt,
+        output=context,
+         metadata={
+            "similarities": similarities,
+            "latency_ms": rag_latency,
+        }
+
+    )
     messages = [
         SystemMessage(content=f"""
                       Matthew is a Full Stack AI Engineer/Developer
@@ -51,7 +80,25 @@ def alfredo(user_prompt: str) -> str:
                       RAG context about Matthew {context}
 """)
     ]
+    llm_start = time.time()
 
     response = model.invoke(messages)
 
-    return response.content
+    reply = response.content
+
+    llm_latency = int((time.time() - llm_start) * 1000)
+
+    trace.update(
+        name="alfredo",
+        output=reply,
+        metaddata={"latency_ms": llm_latency}
+    )
+
+    langfuse.flush() # makes sure that langfuse send sthe data before the function exits
+
+    return reply
+
+
+if __name__ == "__main__": # this is the built in name thing from python saying dont run this file unless I call it init 
+    reply = alfredo()
+    print(reply)
