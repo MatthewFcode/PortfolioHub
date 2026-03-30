@@ -1,8 +1,6 @@
-# Matthew Portfolio
+## Matthew Portfolio
  
 Portfolio to host some of the projects I have worked and to create a profile for myself. Visitors can ask questions about me and get answers grounded in my actual profile data via a RAG pipeline. Built with a React frontend, Python/FastAPI backend, local HuggingFace embeddings, and Supabase vector search.
- 
----
  
 ## Architecture Overview
  
@@ -13,37 +11,7 @@ React (Vite) → Vite Proxy → FastAPI (Uvicorn ASGI) → Gemini LLM
                                       ↕
                              Supabase pgvector (vector search)
 ```
- 
-## Frontend: React + Vite
- 
-The frontend is a React SPA (singl epage application) bundled with Vite.
- 
-Components are kept small and focused to optimise the VDOM and diffing process to ensure smooth rerenders.
- 
-### Streaming to the UI
- 
-The backend streams tokens back as plain text (`text/plain` with `StreamingResponse`). On the frontend this is consumed using the `Fetch API` with `ReadableStream`:
- 
-```javascript
-const response = await fetch('/api/alfredo', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ prompt: userMessage }),
-})
- 
-const reader = response.body.getReader()
-const decoder = new TextDecoder()
- 
-while (true) {
-  const { done, value } = await reader.read()
-  if (done) break
-  const token = decoder.decode(value)
-  // append token to the current assistant message in state
-}
-```
- 
-Each token triggers a React state update which rerenders just the active message bubble. React's virtual DOM diffing ensures only the changed text node is patched in the real DOM no full rerenders on each token.
- 
+
 ### Vite Proxy
  
 In development, Vite proxies API requests to the FastAPI backend to avoid CORS issues. Configured in `vite.config.ts`:
@@ -140,6 +108,35 @@ All requests are traced with Langfuse, an open source LLM observability platform
 - Top level trace update which logs the full LLM response and total latency
  
 This allows monitoring of retrieval quality (are similarity scores high enough?), response latency, and token usage over time.
+
+## Frontend: React + Vite
+
+The frontend is a React SPA (singl epage application) bundled with Vite.
+Components are kept small and focused to optimise the VDOM and diffing process to ensure smooth rerenders.
+ 
+### Streaming to the UI
+
+The backend streams tokens back as plain text (`text/plain` with `StreamingResponse`). On the frontend this is consumed using the `Fetch API` with `ReadableStream`:
+ 
+```javascript
+const response = await fetch('/api/alfredo', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ prompt: userMessage }),
+})
+ 
+const reader = response.body.getReader()
+const decoder = new TextDecoder()
+ 
+while (true) {
+  const { done, value } = await reader.read()
+  if (done) break
+  const token = decoder.decode(value)
+  // append token to the current assistant message in state
+}
+```
+ 
+Each token triggers a React state update which rerenders just the active message bubble. React's virtual DOM diffing ensures only the changed text node is patched in the real DOM no full rerenders on each token.
  
 ## Tech Stack
  
