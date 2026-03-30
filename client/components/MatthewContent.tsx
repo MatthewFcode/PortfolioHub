@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import MatthewProfile1 from '../../src/assets/images/Matthew-Prof1.jpg'
-import MatthewProfile2 from '../../src/assets/images/Matthew-prof.jpg'
+//import MatthewProfile2 from '../../src/assets/images/Matthew-prof.jpg'
 import MatthewProfile3 from '../../src/assets/images/greem-matt.jpg'
 import { useForm, ValidationError } from '@formspree/react'
 import githubLogo from '../../src/assets/images/github.png'
@@ -9,7 +9,7 @@ import Alfredo from './MatthewContentAlfredo'
 
 function MatthewContent() {
   // const [image, setImage] = useState(MatthewProfile1)
-  const images = [MatthewProfile1, MatthewProfile2, MatthewProfile3]
+  const images = [MatthewProfile1, MatthewProfile3]
   const [index, setIndex] = useState(0)
   const [state, handleSubmit] = useForm('mwvrrvob')
 
