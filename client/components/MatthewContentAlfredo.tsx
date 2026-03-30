@@ -71,7 +71,7 @@ import AlfredoAnimation from '../../src/animations/chatbot.json'
 
 function Alfredo() {
   const [promptState, setPromptState] = useState('')
-  const [reply, setReply] = useState('Yo')
+  const [reply, setReply] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [isSpeaking, setIsSpeaking] = useState(false)
   const lottieRef = useRef<LottieRefCurrentProps | null>(null)
