@@ -71,11 +71,13 @@ import AlfredoAnimation from '../../src/animations/chatbot.json'
 
 function Alfredo() {
   const [promptState, setPromptState] = useState('')
-  const [reply, setReply] = useState('')
+  const [reply, setReply] = useState('Yo')
   const [isLoading, setIsLoading] = useState(false)
   const [isSpeaking, setIsSpeaking] = useState(false)
   const lottieRef = useRef<LottieRefCurrentProps | null>(null)
-  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null)
+  //const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null)
+
+  const audioRef = useRef<HTMLAudioElement | null>(null)
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -111,21 +113,55 @@ function Alfredo() {
     setIsLoading(false)
   }
 
-  const handleSpeak = (text: string) => {
-    //speak function
-    if (isSpeaking) {
-      window.speechSynthesis.cancel()
+  const handleSpeak = async (text: string) => {
+    if (isSpeaking && audioRef.current) {
+      audioRef.current.pause()
+      audioRef.current.currentTime = 0
       setIsSpeaking(false)
       return
     }
 
-    const utterance = new SpeechSynthesisUtterance(text)
-    utterance.onend = () => setIsSpeaking(false)
-    utterance.onerror = () => setIsSpeaking(false)
-    utteranceRef.current = utterance
-    window.speechSynthesis.speak(utterance)
     setIsSpeaking(true)
+
+    try {
+      const res = await fetch('/api/v1/tts', {
+        // adjust host if deployed
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text }),
+      })
+
+      const blob = await res.blob()
+      const audioUrl = URL.createObjectURL(blob)
+
+      const audio = new Audio(audioUrl)
+      audioRef.current = audio
+
+      audio.onended = () => setIsSpeaking(false)
+      audio.onerror = () => setIsSpeaking(false)
+
+      await audio.play()
+    } catch (err) {
+      console.error(err)
+      setIsSpeaking(false)
+    }
   }
+
+  // const handleSpeak = (text: string) => {
+  //   //speak function
+  //   if (isSpeaking) {
+  //     window.speechSynthesis.cancel()
+  //     setIsSpeaking(false)
+  //     return
+  //   }
+
+  //   const utterance = new SpeechSynthesisUtterance(text)
+  //   utterance.onend = () => setIsSpeaking(false)
+  //   utterance.onerror = () => setIsSpeaking(false)
+  //   utteranceRef.current = utterance
+  //   window.speechSynthesis.speak(utterance)
+  //   setIsSpeaking(true)
+  // }
 
   return (
     <div className="alfredo-wrapper">
