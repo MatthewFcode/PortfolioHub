@@ -1567,7 +1567,11 @@ html, body {
       0 3px 4px rgba(0, 0, 0, 0.3);
   }
 }
-
+.alfredo-heading {
+  color: green;
+  margin-top: -0.1rem;
+ 
+}
 @media (max-width: 768px) {
   .alfredo-input    { font-size: 0.45rem; }
   .alfredo-reply-text { font-size: 0.45rem; }

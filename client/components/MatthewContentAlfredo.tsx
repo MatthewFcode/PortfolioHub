@@ -173,7 +173,10 @@ function Alfredo() {
         {/* Response box — shown once we have a reply */}
         {reply && (
           <div className="alfredo-reply-box">
-            <p className="alfredo-reply-text">{reply}</p>
+            <p className="alfredo-reply-text">
+              <h3 className="alfredo-heading">ALFREDO:</h3>
+              {reply}
+            </p>
             <button
               type="button"
               className="alfredo-audio-btn"

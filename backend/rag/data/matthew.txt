@@ -1,0 +1,65 @@
+
+Copy
+
+## Profile Summary
+ 
+Matthew Foley is a Full Stack AI Engineer and Developer based in Auckland, New Zealand. He completed Dev Academy's intensive full stack bootcamp (NZQA Level 6, 800 hours) and has since gone deep on AI engineering — building production RAG pipelines, AI agents with tool calling and streaming, and containerised deployments on live servers. He is a New Zealand citizen open to relocation and actively seeking his first professional software role.
+ 
+## Technical Skills
+ 
+Matthew's core stack is TypeScript, JavaScript, Python, React.js, Next.js, Node.js, Express.js, and FastAPI. On the database side he works with SQL, SQLite, PostgreSQL, Knex.js, and Prisma. He writes tested, production-quality code using TDD, unit testing, integration testing, and CI/CD pipelines.
+ 
+His AI engineering skills include building RAG pipelines with local embedding models, vector stores, chunk optimisation, and retrieval ranking. He has hands-on experience with LangChain, LangGraph, and Langfuse for agent observability — measuring latency, token usage, and optimising RAG injection. He also has experience with WebSockets for high-frequency real-time data, Docker and Dokku for containerised deployments, and NGINX for routing.
+ 
+## Projects
+ 
+### BuddyAI — Personal AI Agent (In Progress)
+Full stack AI agent combining tool calling, RAG, MCP servers, streaming, and text-to-speech into a multi-purpose personal assistant. Features custom authentication for security. Built with TypeScript, LangChain, and FastAPI.
+GitHub: https://github.com/MatthewFcode/BuddyAI
+ 
+### Don Foley Hub — AI CV Chatbot
+Built a full website solution for his father's CV being too long for employers. Features an AI chatbot using LangChain and RAG to build a searchable knowledge base that answers employer questions about Don's experience in real time.
+Live: https://donfoley.borb.nz
+GitHub: https://github.com/MatthewFcode/Don-Foley-Hub
+ 
+### InsightStack — Full Stack Community Platform
+Live full stack platform for creating user accounts, posting advice across channels, and voting on technologies. Built and deployed end to end.
+Live: https://insightstack.borb.nz
+GitHub: https://github.com/MatthewFcode/InsightStack
+ 
+### Emirates Team New Zealand Dashboard — WebSockets Telemetry
+Mock dashboard using WebSockets and state globalisation to transmit and display high frequency telemetry data from backend to frontend in real time. Demonstrates real-time data handling and UI performance optimisation under load.
+GitHub: https://github.com/MatthewFcode/ETNZ-Dashboard
+ 
+### FilmFeels — Multi-purpose API
+Multi-purpose API for sending HTTP requests with automatic data enrichment from third party APIs.
+Live: https://filmfeels.borb.nz
+ 
+## Education and Training
+ 
+Matthew completed the Dev Academy Full Stack Development programme from May to October 2025, earning an NZQA Level 6 Certificate in Applied Software Development. The 800-hour bootcamp covered full stack engineering and interpersonal skills including communication, feedback, empathy, and agile collaboration. Prior to that he attended Sacred Heart College in Glendowie, Auckland, completing NCEA Levels 1, 2, and 3.
+ 
+## Work Experience
+ 
+### The Trusts Auckland — Floating Duty Manager (December 2024 to March 2026)
+Managed operations across 27 different store environments, building strong relationships with management and retail teams. Responsible for active risk management in a volatile retail environment and upholding NZ liquor licensing standards under the Sale and Supply of Alcohol Act 2012.
+ 
+### The Trusts Auckland — Sales Assistant (November 2023 to February 2024)
+Handled deliveries, stock management, and customer communication in a high-volume retail environment.
+ 
+### Pak'nSave Glen Innes — Produce Assistant (June 2023 to November 2023)
+Part-time role focused on produce management and team communication.
+ 
+## About Matthew
+ 
+Matthew is a driven and self-motivated developer who takes pride in the quality of his work. Since graduating from Dev Academy he has continued building production-grade projects independently, going deep on AI engineering and full stack development without being asked to. He is always learning — whether that is backpropagation and calculus for deep learning, optimising RAG pipelines, or containerising deployments.
+ 
+Beyond technology Matthew is a lifelong athlete and competitive tennis player. He captained first grade tennis teams at Mission Bay Tennis Club and premier teams at Sacred Heart College. These experiences shaped his leadership, communication, and understanding of what consistent effort and dedication actually look like in practice.
+ 
+He is looking for a role where he can grow his skills, contribute meaningfully, and work with people who care about building quality software.
+ 
+Contact: matthewfoley333@gmail.com | 022 564 2739
+LinkedIn: https://www.linkedin.com/in/matthew-foley-96b02a256
+GitHub: https://github.com/MatthewFcode
+Portfolio: https://matthewfoley.borb.nz
+ 

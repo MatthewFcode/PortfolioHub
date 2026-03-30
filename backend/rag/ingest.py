@@ -11,7 +11,7 @@ supabase: Client = create_client( #supabase client
     os.environ["SUPABASE_SERVICE_ROLE_KEY"]
 )
 
-embed_model = SentenceTransformer("BAAI/bge-base-en-v1.5") # model for generating the embeddings 
+embed_model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2") # model for generating the embeddings 
 
 def clean_text(text: str) -> str: #helper function for cleaning text s
     text = re.sub(r'\*\*', '', text)
@@ -19,7 +19,7 @@ def clean_text(text: str) -> str: #helper function for cleaning text s
     text = re.sub(r'[ \t]+', ' ', text)
     return text.strip()
 
-def chunk_text(text: str, max_words: int = 40, overlap_sentences: int = 1) -> list[str]: # chunking function for splitting the document up into chunks 
+def chunk_text(text: str, max_words: int = 80, overlap_sentences: int = 1) -> list[str]: # chunking function for splitting the document up into chunks 
     paragraphs = [p.replace('\n', ' ').strip() for p in re.split(r'\n{2,}', text) if p.strip()]
     chunks = []
 
@@ -44,7 +44,7 @@ def chunk_text(text: str, max_words: int = 40, overlap_sentences: int = 1) -> li
 
 #embeddings function
 def embed_query(text: str) -> list[float]:
-    return embed_model.encode(f"Represent this sentence: {text}").tolist()
+    return embed_model.encode(text).tolist()
 
 #final function to run
 def ingest(file_path: str):
@@ -72,3 +72,6 @@ def ingest(file_path: str):
     supabase.table("documents").insert(rows).execute() # insert all the chunks into supabase
     print(f"✅ Ingested {len(chunks)} chunks into Supabase")
 
+
+if __name__ == "__main__":
+    ingest("./data/matthew.txt")
