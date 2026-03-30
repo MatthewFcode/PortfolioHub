@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel # class from pydantic that validates data and parses JSON into python objects 
-from alfredo import alfredo
+from alfredo.alfredo import alfredo #importing the function directly 
 
 app = FastAPI()
 

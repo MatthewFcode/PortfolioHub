@@ -5,7 +5,8 @@ from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
 from sentence_transformers import SentenceTransformer
-from langfuse import Langfuse 
+from langfuse.client import Langfuse 
+from supabase import create_client, Client
 
 load_dotenv() # loads all the current env vars into the os environ
 
@@ -84,11 +85,17 @@ async def alfredo(user_prompt: str) -> str:
     llm_start = time.time()
     full_response = ""
 
+    # async for chunk in model.astream(messages): 
+    #     if chunk.content:
+    #         token = chunk.content
+    #         full_response += token
+    #         yield token
+
     async for chunk in model.astream(messages): 
-        if chunk.content:
-            token = chunk.content
-            full_response += token
-            yield token
+      if chunk.content:
+        token = chunk.content if isinstance(chunk.content, str) else chunk.content[0].get("text", "")
+        full_response += token
+        yield token
 
 
     llm_latency = int((time.time() - llm_start) * 1000)
