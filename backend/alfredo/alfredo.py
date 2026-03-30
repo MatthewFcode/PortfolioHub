@@ -17,7 +17,7 @@ supabase: Client = create_client(
 embed_model = SentenceTransformer("BAAI/bge-base-en-v1.5")
 
 model = ChatGoogleGenerativeAI(
-  model="flash-latest", 
+  model="models/gemini-flash-latest", 
   temperature=0.7,
   api_key=os.environ["GOOGLE_API_KEY"]
 )
@@ -90,14 +90,13 @@ async def alfredo(user_prompt: str) -> str:
             full_response += token
             yield token
 
-    response = model.invoke(messages)
 
     llm_latency = int((time.time() - llm_start) * 1000)
 
     trace.update(
         name="alfredo",
         output=full_response,
-        metaddata={"latency_ms": llm_latency}
+        metadata={"latency_ms": llm_latency}
     )
 
     langfuse.flush() # makes sure that langfuse send sthe data before the function exits

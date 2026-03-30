@@ -5,13 +5,15 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   // definfing the configuration object for vite to read
   plugins: [react()], // telling vite to use the react plugin
-  proxy: {
-    // proxy for modifying traffic between a server and a frontend/client otherwise CORS would block our request from our dev server to our backend server
-    api: {
-      // sets up the proxy for any request that starts with api
-      target: 'http://localhost:8000',
-      changeOrigin: true,
-      rewrite: (path) => path.replace(/^\/api/, ''), // rewriting the request path before sending it to the server e.g. React makes POST to /api/users --> proxy intercepts and reroutes to http://localhost:8000/api/users
+  server: {
+    proxy: {
+      // proxy for modifying traffic between a server and a frontend/client otherwise CORS would block our request from our dev server to our backend server
+      '/api': {
+        // sets up the proxy for any request that starts with api
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+        rewrite: (path) => path, // rewriting the request path before sending it to the server e.g. React makes POST to /api/users --> proxy intercepts and reroutes to http://localhost:8000/api/users
+      },
     },
   },
 })
