@@ -8,26 +8,26 @@ import linkedinLogo from '../../src/assets/images/linkedbeh.webp'
 import Alfredo from './MatthewContentAlfredo'
 
 function MatthewContent() {
-  // const [image, setImage] = useState(MatthewProfile1)
-  const images = [MatthewProfile1, MatthewProfile3]
-  const [index, setIndex] = useState(0)
+  const [image, setImage] = useState(MatthewProfile1)
+  // const images = [MatthewProfile1, MatthewProfile3]
+  // const [index, setIndex] = useState(0)
   const [state, handleSubmit] = useForm('mwvrrvob')
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setImage((prev) =>
-  //       prev === MatthewProfile1 ? MatthewProfile2 : MatthewProfile1,
-  //     )
-  //   }, 5000)
-  //   return () => clearInterval(interval)
-  // }, [])
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length)
+      setImage((prev) =>
+        prev === MatthewProfile1 ? MatthewProfile3 : MatthewProfile1,
+      )
     }, 5000)
-
     return () => clearInterval(interval)
   }, [])
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setIndex((prev) => (prev + 1) % images.length)
+  //   }, 5000)
+
+  //   return () => clearInterval(interval)
+  // }, [])
 
   const skills = [
     'Node.js',
@@ -53,7 +53,7 @@ function MatthewContent() {
         <div className="about-col about-col--left">
           <div className="about-photo-panel">
             <img
-              src={images[index]}
+              src={image}
               alt="Matthew profile"
               className="about-profile-img"
             />
